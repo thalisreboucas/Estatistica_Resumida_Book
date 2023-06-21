@@ -1,0 +1,11 @@
+# Bem vindos {.unnumbered}
+
+Estatística Resumida *BOOK* é um livro que oferece uma introdução completa e acessível aos princípios e métodos da estatística, focando especialmente na sua aplicação prática. Este livro é destinado a estudantes, profissionais e entusiastas que desejam compreender e aplicar conceitos estatísticos de forma eficiente em diversas áreas.
+
+A obra inicia com uma explicação dos fundamentos da estatística, apresentando os principais conceitos, como população, amostra, variável, medidas de tendência central e de dispersão. Em seguida, aborda os diferentes tipos de estudos estatísticos e suas respectivas metodologias, incluindo estudos observacionais e experimentais.
+
+Uma parte significativa do livro é dedicada à coleta, organização e análise de dados. Os leitores aprenderão técnicas para selecionar amostras representativas, conduzir pesquisas e experimentos, além de explorar e visualizar os dados utilizando gráficos e tabelas. A importância da interpretação correta dos resultados estatísticos é enfatizada ao longo de todo o texto.
+
+A obra também explora os principais métodos estatísticos, como inferência estatística, teste de hipóteses, regressão e correlação. Cada método é explicado de forma clara e ilustrado com exemplos do mundo real, permitindo aos leitores compreender como aplicar essas técnicas em situações reais.
+
+Além disso, o livro aborda tópicos avançados, como análise multivariada, séries temporais e análise de sobrevivência, ampliando ainda mais o conhecimento estatístico dos leitores.
