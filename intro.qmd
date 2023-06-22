@@ -1,97 +1,3 @@
-# Análise Descritiva {.unnumbered}
-
-## Medidas de Posição
-
-### Média
-
-Em um conjuto de dados temos um número $n$ de valores e a soma total desse conjuto de dados e a sua divisão pelo o valor de $n$ nos dá a média, porém a média é influênciada por valores que fogem do padrão da amostra sendo o valor grande demais ou muito pequeno ,lembrando que a média pode ou não representar $50\%$ dos dados.
-
-Seja ${\displaystyle n}$ o número total de valores e ${\displaystyle x_{i}}$ cada valor, em que ${\displaystyle i=1,\dots ,n}$. Média aritmética é a soma dos valores ${\displaystyle x_{i}}$ dividido pelo número total de valores ${\displaystyle n}$:
-
-\*\*Formula :\*\*
-
-\$\$ \\bar{x} = \\dfrac{x_1 + \\ldots +x_n}{n} = \\frac{1}{n}\\sum\_{i-1}\^{n}x_i
-
-\$\$\$\$
-
-### Mediana
-
-O termo "mediana" refere-se a "meio". Dado um conjunto de informações numéricas, o valor central corresponde à mediana desse conjunto. Dessa forma, é importante que esses valores sejam colocados em ordem, seja crescente ou decrescente. Se houver uma quantidade ímpar de valores numéricos, a mediana será o valor central do conjunto numérico. Se a quantidade de valores for um número par, devemos fazer uma média aritmética dos dois números centrais, e esse resultado será o valor da mediana.
-
-### Moda
-
-A moda é a realização mais frequente em um conjunto de valores. O fenômeno acontece quando, em um banco de dados, há a repetição das informações encontradas em uma mesma variável.
-
-Uma empresa de Tecnologia da Informação tem 20 funcionários contratados. A maioria deles (15) tem idade entre 20 e 25 anos. O restante (5) está na faixa de 30 e 40 anos. A maior recorrência de idade, no entanto, é de funcionários com 23 anos. São 5 no total --- definindo a medida de posição ora apresentada.
-
-A moda pode ser definida em bimodal (quando ocorre a repetição de dois valores) ou multimodal (mais de dois valores repetidos). O caso dos cinco funcionários com 23 anos identificamos como multimodal.
-
-### Quartil
-
-Temos que os Quartis são valores de divisão na qual divide os conjuntado de dados em 4 partes, na qual temos:
-
-1\. Primeiro Quartil divide em $25\%$ em uma amostra ordena os valores inferiores.
-
-2\. Segundo Quartil ou Mediana divide em $50\%$ em uma amostra ordena os valores inferiores.
-
-3\. Terceiro Quartil divide em $75\%$ em uma amostra ordena os valores superiores.
-
-São utilizados para entender como se comporta os dados em cada quartil correspondente até aquele ponto.
-
-\*\*Intervalo interquartil(IIQ)\*\* avalia a dispersão de dados somente depois de ordená-los em ordem crescente. O intervalo interquartil é calculado com base no cálculo de quartis, sendo o primeiro quartil (inferior), o quartil intermediário (mediana), o terceiro quartil (superior), que estão ligados ao conceito de quantil. A diferença entre o quartil superior e o quartil inferior determina o intervalo interquartil
-
-## Medidas de Dispersão
-
-### Amplitude
-
-### Variância
-
-A variância é determinada pela média dos quadrados das diferenças entre cada uma das observações e a média aritmética da amostra. O cálculo é feito com base na seguinte fórmula:
-
-\- Variancia Amostral
-
-\- Variância Populacional
-
-\$\$\$\$\\sigma \^{2}={\\frac {1}{N}}\\sum \_{{i=1}}\^{N}\\left(x\_{i}-\\mu \\right)\^{2},\$\$\$\$
-
-Sendo,
-
-\- $\sigma^2$ : variância
-
-\- $x_i$: valor observado
-
-\- $bar(x)$ : média aritmética da amostra
-
-\- n: número de dados observados
-
-### Desvio Padrão
-
-\$\$\$\$\\sigma(S) = \\sqrt{Variância}\$\$\$\$
-
-### Coeficiente de Variação
-
-\$\$\$\$cv = \\dfrac{\\sigma}{\\bar(x)}
-
-\$\$\$\$
-
-## Tabela de contingência
-
-As tabelas de contingência são usadas para registrar observações independentes de duas ou mais variáveis aleatórias, normalmente qualitativas.
-
-Suponha que tenhamos duas variáveis de uma população, A e B, e queremos relacioná-la com outras duas variáveis C e D . Retirando-se uma amostra aleatória dessa população, uma tabela de contingência conteria as frequências em cada classe, a tabela seria da seguinte forma:
-
-\| \| Variáveis \|
-
-\|\-\-\-\-\-\-\-\-\-\--\|\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--\|\-\-\--\|
-
-\| Variáveis \| C \| D \|
-
-\| A \| 5 \| 3 \|
-
-\| B \| 3 \| 49 \|
-
-\| Total \| 8 \| 52 \|
-
 Em posse da tabela de contingência podemos então realizar testes para saber se há ou não independência entre variáveis.
 
 ### Teste de McNemar
@@ -100,8 +6,7 @@ O teste de McNemar é utilizado em tabelas de contingência, essencialmente em t
 
 As hipóteses do teste são:
 
-\$\$
-
+$$
 \\left\\{ \\begin{array}{l}
 
 H_0: \\text{As variáveis linha e coluna possuem as mesmas proporções},\\\\
@@ -109,12 +14,13 @@ H_0: \\text{As variáveis linha e coluna possuem as mesmas proporções},\\\\
 H_1: \\text{As variáveis linha e coluna possuem proporções diferentes}. \\\\
 
 \\end{array} \\right.
-
-\$\$\$\$
+$$
 
 A estatística do teste, $Q$, é dada por:
 
-\$\$\$\$ Q=\\cfrac{(a-d)\^2}{(a+d)}\$\$\$\$
+$$
+Q=\\cfrac{(a-d)\^2}{(a+d)}
+$$
 
 em que $Q \sim \chi^2(1)$, lê-se $Q$ segue uma distribuição qui-quadrado com 1 grau de liberdade.
 
@@ -124,11 +30,9 @@ A tabela de classes é usada quando temos dados brutos provenientes de uma vari�
 
 Suponhamos que desejamos construir K classes. O valor mínimo da nossa amostra(mín) e o máximo(máx). A partir dessas informações, calculamos a amplitude total(AT):
 
-\$\$\$\$ \\text{AT = máx -- mín.}
-
-\$\$
-
-\$\$
+$$
+\\text{AT = máx -- mín.}
+$$
 
 Como o número de classes (k) é dada por:
 
@@ -136,4 +40,6 @@ $k = 1+3,3\log(n)$
 
 A amplitude de cada classe (h) é dada por:
 
-\$\$ h = \\frac{AT}{k}\$\$\$\$
+$$
+h = \\frac{AT}{k}
+$$
