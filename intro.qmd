@@ -1,4 +1,4 @@
-# Análise Descritiva {-}
+# Análise Descritiva {.unnumbered}
 
 ## Medidas de Posição
 
@@ -10,7 +10,7 @@ Seja ${\displaystyle n}$ o número total de valores e ${\displaystyle x_{i}}$ ca
 
 \*\*Formula :\*\*
 
-$$ \\bar{x} = \\dfrac{x_1 + \\ldots +x_n}{n} = \\frac{1}{n}\\sum\_{i-1}\^{n}x_i
+\$\$ \\bar{x} = \\dfrac{x_1 + \\ldots +x_n}{n} = \\frac{1}{n}\\sum\_{i-1}\^{n}x_i
 
 \$\$\$\$
 
@@ -40,7 +40,7 @@ São utilizados para entender como se comporta os dados em cada quartil correspo
 
 \*\*Intervalo interquartil(IIQ)\*\* avalia a dispersão de dados somente depois de ordená-los em ordem crescente. O intervalo interquartil é calculado com base no cálculo de quartis, sendo o primeiro quartil (inferior), o quartil intermediário (mediana), o terceiro quartil (superior), que estão ligados ao conceito de quantil. A diferença entre o quartil superior e o quartil inferior determina o intervalo interquartil
 
-## Medidas de  Dispersão
+## Medidas de Dispersão
 
 ### Amplitude
 
@@ -64,7 +64,7 @@ Sendo,
 
 \- n: número de dados observados
 
-### Desvio Padrão 
+### Desvio Padrão
 
 \$\$\$\$\\sigma(S) = \\sqrt{Variância}\$\$\$\$
 
@@ -94,13 +94,13 @@ Suponha que tenhamos duas variáveis de uma população, A e B, e queremos relac
 
 Em posse da tabela de contingência podemos então realizar testes para saber se há ou não independência entre variáveis.
 
-### Teste de McNemar 
+### Teste de McNemar
 
 O teste de McNemar é utilizado em tabelas de contingência, essencialmente em tabelas \$(2\\times2)\$, com dados pareados para comparar frequências marginais, que em 'outras palavras significa que o teste compara se houve mudança nas proporções no objeto de estudo antes e depois de uma intervenção.
 
 As hipóteses do teste são:
 
-$$
+\$\$
 
 \\left\\{ \\begin{array}{l}
 
@@ -118,7 +118,7 @@ A estatística do teste, $Q$, é dada por:
 
 em que $Q \sim \chi^2(1)$, lê-se $Q$ segue uma distribuição qui-quadrado com 1 grau de liberdade.
 
-## Tabela de classes 
+## Tabela de classes
 
 A tabela de classes é usada quando temos dados brutos provenientes de uma variável contínua, e então nós as agrupamos para a construção de uma tabela, em intervalos que também são conhecidos por classes.
 
@@ -126,9 +126,9 @@ Suponhamos que desejamos construir K classes. O valor mínimo da nossa amostra(m
 
 \$\$\$\$ \\text{AT = máx -- mín.}
 
-$$
+\$\$
 
-$$
+\$\$
 
 Como o número de classes (k) é dada por:
 
@@ -136,5 +136,4 @@ $k = 1+3,3\log(n)$
 
 A amplitude de cada classe (h) é dada por:
 
-$$
-h = \\frac{AT}{k}\$\$\$\$
+\$\$ h = \\frac{AT}{k}\$\$\$\$
