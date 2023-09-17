@@ -2,16 +2,13 @@
 
 ## Amostragem Aleatória Simples sem reposição - AASs
 
-Para a confecção desse trabalho foi utilizada amostragem aleatória simples sem reposição, uma vez que o espaço amostral era composto por idosos que são acompanhados pelo posto de saúde, ou seja, o mesmo idoso é acompanhado por apenas um posto de saúde. 
-\indent Levou-se em consideração que cada idoso poderia ou não ser selecionado, perante isso, utiliza-se na Estatística a distribuição de Bernoulli. Sendo $x_i$ o idoso observado, então:
+Para a confecção desse trabalho foi utilizada amostragem aleatória simples sem reposição, uma vez que o espaço amostral era composto por idosos que são acompanhados pelo posto de saúde, ou seja, o mesmo idoso é acompanhado por apenas um posto de saúde. \indent Levou-se em consideração que cada idoso poderia ou não ser selecionado, perante isso, utiliza-se na Estatística a distribuição de Bernoulli. Sendo $x_i$ o idoso observado, então:
 
-
-\[x_i =
+$x_i =
 \begin{cases}
 1,\text{ se o idoso é selecionado para compor a amostra.} \\
-0,\text{ se o idoso não é selecionado para compor amostra.} \\
-\end{cases}
-\]
+0,\text{ se o idoso não é selecionado para compor amostra.} 
+$
 
 De acordo com a distribuição assumida, pode-se calcular a variância dos dados por:
 
@@ -19,14 +16,13 @@ $$\sigma^2 = p(1 - p),$$
 
 em que:
 
-$\sigma^2 =$ Variabilidade dos indivíduos na nossa população; 
+$\sigma^2 =$ Variabilidade dos indivíduos na nossa população;
 
 $p \ \ =$ Proporção de membros da população em estudo que apresenta a característica.
 
-Como não teve-se acesso a nenhum dado anterior que pudesse estimar a variabilidade dos dados estudados, tais como pesquisas anteriores, optou-se por usar a maior variabilidade possível, denotada na estatística como “variabilidade conservadora”, no qual $p$ assume o valor que maior estima a variância, no caso, 0,5. Daí, segue-se que,
+Como não teve-se acesso a nenhum dado anterior que pudesse estimar a variabilidade dos dados estudados, tais como pesquisas anteriores, optou-se por usar a maior variabilidade possível, denotada na estatística como "variabilidade conservadora", no qual $p$ assume o valor que maior estima a variância, no caso, 0,5. Daí, segue-se que,
 
 $$S^2 = p(1 - p) = 0,5(1 - 0,5) = 0,25 = \frac{1}{4},$$
-
 
 onde $S^2$ é a variância estimada.
 
@@ -34,38 +30,34 @@ Diante tudo isso, calcula-se o tamanho amostral, denotado por $n$, através da s
 
 $$n = \frac{1}{\frac{D}{S^2}+\frac{1}{N}},$$
 
-
 em que:
 
-$D \ = \frac{E^2}{Z_\alpha};$ 
+$D \ = \frac{E^2}{Z_\alpha};$
 
-$E \ =$ Erro máximo permitido; 
+$E \ =$ Erro máximo permitido;
 
-$Z_\alpha =$ Quantil de ordem $\alpha$ da distribuição normal padrão; 
+$Z_\alpha =$ Quantil de ordem $\alpha$ da distribuição normal padrão;
 
 $N \ =$ Tamanho populacional;
 
-$S^2 =$ Variância populacional estimada. 
+$S^2 =$ Variância populacional estimada.
 
-O Erro máximo permitido ou margem de erro é a diferença entre o valor estimado pela pesquisa e o verdadeiro valor. Por exemplo, se retirarmos a média $\mu$ de uma amostra com uma margem de erro de 10\% esperamos que a média da população esteja em um intervalo de $\mu - 10\%$ e $\mu + 10\%$.
-Para estimarmos uma determinada característica de interesse com dada precisão, é importante que estabeleçamos um nível de confiança para nossa pesquisa, nível esse que denotaremos por $(1 - \alpha)$, sendo a probabilidade de que o erro amostral efetivo seja menor do que o erro amostral admitido pela pesquisa (máximo permitido). É importante salientar que um alto nível de confiança pode trazer problemas atrelados a ele, por exemplo, uma necessidade de um maior tamanho amostral. 
+O Erro máximo permitido ou margem de erro é a diferença entre o valor estimado pela pesquisa e o verdadeiro valor. Por exemplo, se retirarmos a média $\mu$ de uma amostra com uma margem de erro de 10% esperamos que a média da população esteja em um intervalo de $\mu - 10\%$ e $\mu + 10\%$. Para estimarmos uma determinada característica de interesse com dada precisão, é importante que estabeleçamos um nível de confiança para nossa pesquisa, nível esse que denotaremos por $(1 - \alpha)$, sendo a probabilidade de que o erro amostral efetivo seja menor do que o erro amostral admitido pela pesquisa (máximo permitido). É importante salientar que um alto nível de confiança pode trazer problemas atrelados a ele, por exemplo, uma necessidade de um maior tamanho amostral.
 
 Margem de erro, Coeficiente de confiança e tamanho da amostra sempre caminham lado a lado. Modificar qualquer um dos 3 parâmetros, alterará os restantes. Encontra-se algumas mudanças:
 
-- Reduzir a margem de erro obriga a aumentar o tamanho da amostra;
-- Diminuir o Coeficiente de confiança obriga a aumentar o tamanho da amostra;
-- Se eu aumentar o tamanho da minha amostra, posso reduzir a margem de erro ou incrementar o nível de confiança.
-
+-   Reduzir a margem de erro obriga a aumentar o tamanho da amostra;
+-   Diminuir o Coeficiente de confiança obriga a aumentar o tamanho da amostra;
+-   Se eu aumentar o tamanho da minha amostra, posso reduzir a margem de erro ou incrementar o nível de confiança.
 
 Existe casos onde o tamanho amostral fica inacessível para o pesquisador devido aos custos gerados, para isto existe um fator de correção para diminuir o tamanho amostral (n), quando $\frac{n}{N} \geq 0,05$. Segue o novo tamanho amostral:
 
 $$n_{new} = \frac{n}{1 + \left(\frac{n - 1}{N}\right)}$$
 
-em que: 
+em que:
 
-$n_{new} =$ Novo tamanho amostral com fator de correção; 
+$n_{new} =$ Novo tamanho amostral com fator de correção;
 
-$\ n \ \ =$ Tamanho amostral sem o fator de correção; 
+$\ n \ \ =$ Tamanho amostral sem o fator de correção;
 
-$\ N \ =$ Tamanho da população alvo. 
-
+$\ N \ =$ Tamanho da população alvo.

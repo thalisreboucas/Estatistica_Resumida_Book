@@ -1,90 +1,70 @@
-# Análise de Correlação {-}
+# Análise de Correlação {.unnumbered}
 
 ## Coeficiente de Cramér
 
 O coeficiente de Cramér é uma medida entre duas variáveis medidas numa escala categórica. Portanto pode ser aplicado em situações onde a informação se encontra distribuída por categorias nominais não ordenáveis.
 
-Este coeficiente obtém-se diretamente a partir da estatística $\chi_v^2$ através da expressão 
+Este coeficiente obtém-se diretamente a partir da estatística $\chi_v^2$ através da expressão
 
 $$
 C = \sqrt{\dfrac{\chi_v^2}{n(l-1)}}
-$$
-onde n representa o número total de observações e l representa o mínimo entre o número de linhas e colunas na tabela de contingência.
+$$ onde n representa o número total de observações e l representa o mínimo entre o número de linhas e colunas na tabela de contingência.
 
-A partir do valor do coeficiente de Cramér é possível efetuar um teste às hipóteses
-\[ \begin{cases}
+A partir do valor do coeficiente de Cramér é possível efetuar um teste às hipóteses 
+
+$\begin{cases}
 H_0:\text{  As variáveis são independentes;} \\
 H_1:\text{  As variáveis não são independentes.}
-\end{cases}
-\]
-
+\end{cases}$
 
 ## Coeficiente de Correlação Ponto Biserial
 
 Esse coeficiente ($r_{pb}$) mede a correlação entre uma variável quantitativa e uma variável categórica binária (0,1). Ele pode variar entre -1 e 1 e é definido pela seguinte fórmula:
 
-\[
-    r_{pb}  = \dfrac{M_1-M_0}{S_n}\sqrt{pq}
-\]
+$ r\_{pb} = \dfrac{M_1-M_0}{S_n}\sqrt{pq} $
 
+-   $M_1$ = média do grupo que recebeu o valor 1 da variável binária.
+-   $M_0$ = média do grupo que recebeu o valor 0 da variável binária.
+-   $S_n$ = desvio padrão da variável binária toda.
+-   $p$ = proporção de casos do grupo "0" na variável binária.
+-   $q$ = proporção de casos do grupo "1" na variável binária.
 
-- $M_1$ = média do grupo que recebeu o valor 1 da variável binária.
-- $M_0$ = média do grupo que recebeu o valor 0 da variável binária.
-- $S_n$ = desvio padrão da variável binária toda.
-- $p$ = proporção de casos do grupo "0" na variável binária.
-- $q$ = proporção de casos do grupo "1" na variável binária.
+## Correlação linear de Pearson
 
-
-
-
-## Correlação linear de Pearson 
-
-De modo geral, a quantificação do grau de associação entre duas variáveis é feita pelos chamados coeficientes de **associação** ou **correlação**.  Essas são medidas que descrevem numericamente a associação (ou dependência) entre duas variáveis. Ou seja, tais resultados nos permitem verificar se uma variável influencia de forma positiva ou negativa na outra. 
+De modo geral, a quantificação do grau de associação entre duas variáveis é feita pelos chamados coeficientes de **associação** ou **correlação**. Essas são medidas que descrevem numericamente a associação (ou dependência) entre duas variáveis. Ou seja, tais resultados nos permitem verificar se uma variável influencia de forma positiva ou negativa na outra.
 
 Para facilitar a compreensão, esses coeficientes usualmente variam entre -1 e +1, e quanto mais próximo de 0, menos relação as variáveis possuem. A intensidade da associação linear existente entre as variáveis quantitativas pode ser determinada através do chamado Coeficiente de Correlação Linear de Pearson, e sua fórmula é definida por:
 
-$$\rho_{(x,y)} = \frac{cov{(x,y)}}{S_{x}S_{y}},$$
-em que ,
+$$\rho_{(x,y)} = \frac{cov{(x,y)}}{S_{x}S_{y}},$$ em que ,
 
-- $\text{Cov}{(x,y)}$ - Covariância ou variância conjunta das variáveis X e Y; 
-- $S_{x}$- Desvio Padrão da variável X
-- $S_{Y}$ - Desvio Padrão da variável Y.
+-   $\text{Cov}{(x,y)}$ - Covariância ou variância conjunta das variáveis X e Y;
 
-  Como dito anteriormente, o $\rho$ pode assumir valores entre -1 e +1 e neste ponto cabe algumas observações, tais como
+-   $S_{x}$- Desvio Padrão da variável X
 
-- $\rho_{(x,y)}$ = +1 significa uma correlação positiva perfeita entre as duas variáveis, ou seja, se uma aumenta a outra também aumenta;
-- $\rho_{(x,y)}$ = -1 significa uma correlação negativa perfeita entre as duas variáveis, isto é, se uma aumenta a outra diminui;
-- $\rho_{(x,y)}$ = 0  significa que as duas variáveis não dependem linearmente uma da outra. No entanto, pode existir uma outra dependência "não-linear". Logo, o resultado deve ser investigado por outros meios.
+-   $S_{Y}$ - Desvio Padrão da variável Y.
 
+    Como dito anteriormente, o $\rho$ pode assumir valores entre -1 e +1 e neste ponto cabe algumas observações, tais como
 
+-   $\rho_{(x,y)}$ = +1 significa uma correlação positiva perfeita entre as duas variáveis, ou seja, se uma aumenta a outra também aumenta;
 
+-   $\rho_{(x,y)}$ = -1 significa uma correlação negativa perfeita entre as duas variáveis, isto é, se uma aumenta a outra diminui;
+
+-   $\rho_{(x,y)}$ = 0 significa que as duas variáveis não dependem linearmente uma da outra. No entanto, pode existir uma outra dependência "não-linear". Logo, o resultado deve ser investigado por outros meios.
 
 ## Coeficiente de correlação de Spearman
 
-O coeficiente de Correlação de Spearman é geralmente utilizado quando temos duas variáveis ordinais ou quando não podemos utilizar o teste Cramér V, pois não podemos facilmente atestar suas suposições.
-Diante de duas variáveis medidas numa escala de ordenação clara, ou que apresentam uma relação não linear mas monótona (se uma aumenta a outra tem sempre tendência a aumentar (ou a diminuir)). 
+O coeficiente de Correlação de Spearman é geralmente utilizado quando temos duas variáveis ordinais ou quando não podemos utilizar o teste Cramér V, pois não podemos facilmente atestar suas suposições. Diante de duas variáveis medidas numa escala de ordenação clara, ou que apresentam uma relação não linear mas monótona (se uma aumenta a outra tem sempre tendência a aumentar (ou a diminuir)).
 
-É um método não-paramétrico que usa os postos das variáveis quando o coeficiente de correlação de Pearson não pode ser aplicado, temos como alternativa o coeficiente de correlação de Spearman.
-A ideia de construção deste coeficiente é bastante simples.
+É um método não-paramétrico que usa os postos das variáveis quando o coeficiente de correlação de Pearson não pode ser aplicado, temos como alternativa o coeficiente de correlação de Spearman. A ideia de construção deste coeficiente é bastante simples.
 
 Dadas duas amostras de observação ordenáveis, substitui-se cada um dos seus valores pela sua ordem de ordenação, em inglês\textit{rank}
 
-Por exemplo, se uma amostra de três valores for $x_{1} = 2.1$, $x_{2} = 1.7$, $x_{3} = 4.8$, então os
-respectivos ranks serão $r_{1}= 2$, $r_{2} = 1$, $r_{3} = 3$. Após substituir cada uma das amostras pelos
-seus ranks o coeficiente de Spearman não e mais do que o coeficiente de Pearson aplicado
-agora aos \textit{ranks}. Uma vez que as ordens variam sempre entre 1 e $n$ (número de observações), pode-se escrever o coeficiente do seguinte modo
-$$  R_{s}=1- \dfrac{ 6\sum_{i=1}^{n} D_{i}^2}{n^{3} - n}, $$
-onde $D_{i}$ representa a diferença de ranks entre as observações que estão sendo analisadas.
+Por exemplo, se uma amostra de três valores for $x_{1} = 2.1$, $x_{2} = 1.7$, $x_{3} = 4.8$, então os respectivos ranks serão $r_{1}= 2$, $r_{2} = 1$, $r_{3} = 3$. Após substituir cada uma das amostras pelos seus ranks o coeficiente de Spearman não e mais do que o coeficiente de Pearson aplicado agora aos \textit{ranks}. Uma vez que as ordens variam sempre entre 1 e $n$ (número de observações), pode-se escrever o coeficiente do seguinte modo $$  R_{s}=1- \dfrac{ 6\sum_{i=1}^{n} D_{i}^2}{n^{3} - n}, $$ onde $D_{i}$ representa a diferença de ranks entre as observações que estão sendo analisadas.
 
-## Coeficiente $\tau$ de Kendall 
-Uma alternativa ao coeficiente de Spearman é o coeficiente de correlação $\tau$ de Kendall que se aplica nas mesmas condições, porém com duas vantagens : se as amostras tiverem dimensão muito reduzida e valores repetidos, os resultados do teste são mais precisos; por outro lado, o coeficiente $\tau$ de Kendall pode ser generalizado
-para correlações parciais que são correlações medidas entre duas variáveis após remoção do efeito de uma possível terceira variável sobre ambas.
+## Coeficiente $\tau$ de Kendall
 
-O coeficiente de Kendall é descrito como uma medida de concordância entre dois conjuntos, medindo a diferença entre a
-probabilidade de as classificações estarem na mesma ordem e a probabilidade de estarem em ordens diferentes.
+Uma alternativa ao coeficiente de Spearman é o coeficiente de correlação $\tau$ de Kendall que se aplica nas mesmas condições, porém com duas vantagens : se as amostras tiverem dimensão muito reduzida e valores repetidos, os resultados do teste são mais precisos; por outro lado, o coeficiente $\tau$ de Kendall pode ser generalizado para correlações parciais que são correlações medidas entre duas variáveis após remoção do efeito de uma possível terceira variável sobre ambas.
+
+O coeficiente de Kendall é descrito como uma medida de concordância entre dois conjuntos, medindo a diferença entre a probabilidade de as classificações estarem na mesma ordem e a probabilidade de estarem em ordens diferentes.
 
 $$ \tau = \dfrac{ concordantes - discordantes}{\frac{n(n-1)}{2}}.   $$
-
-
-
-

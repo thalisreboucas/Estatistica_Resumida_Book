@@ -1,57 +1,51 @@
-# Regressão 
+# Regressão
 
 ## Modelos de Regressão
 
-Em diversos estudos é de extrema importância verificar se duas ou mais variáveis estão relacionadas entre si. Uma alternativa é determinar um modelo matemático  que expresse tal relação, e na estatística este tipo de análise é conhecido como: **Análise de Regressão**. Em outras palavras, modelos de regressão nos ajudam a compreender melhor como uma variável influência no comportamento de outras. 
+Em diversos estudos é de extrema importância verificar se duas ou mais variáveis estão relacionadas entre si. Uma alternativa é determinar um modelo matemático que expresse tal relação, e na estatística este tipo de análise é conhecido como: **Análise de Regressão**. Em outras palavras, modelos de regressão nos ajudam a compreender melhor como uma variável influência no comportamento de outras.
 
-Caso o interesse da pesquisa seja avaliar a relação da variável dependente (expressa por $Y$) com apenas uma variável independente ($X$), estamos lidando com **Regressão Linear Simples**. Porém, se for necessária a verificação de duas ou mais variáveis independentes, temos um caso de **Regressão Linear Múltipla**. 
-
+Caso o interesse da pesquisa seja avaliar a relação da variável dependente (expressa por $Y$) com apenas uma variável independente ($X$), estamos lidando com **Regressão Linear Simples**. Porém, se for necessária a verificação de duas ou mais variáveis independentes, temos um caso de **Regressão Linear Múltipla**.
 
 Os modelos de regressão múltipla são construídos pelos seguintes passos:
 
-1. **Seleção de variáveis:** a priori, não sabemos quais são as variáveis independentes que influenciam de forma mais significativa na variável resposta (dependente). O objetivo é encontrar um modelo mais parcimonioso que explica os dados, porém quanto mais variáveis no modelo, maior se torna a estimativa do erro e mais dependente o modelo fica dos dados observados. Então, devemos checar a importância das variáveis, incluindo ou excluindo-as do modelo se baseando em uma regra de decisão. Para esta seleção utiliza-se a relação das variáveis preditoras (inpedendentes) com a variável resposta (dependente), analisando sempre a relação de cada variável incluída, observando a significância da mesma.
+1.  **Seleção de variáveis:** a priori, não sabemos quais são as variáveis independentes que influenciam de forma mais significativa na variável resposta (dependente). O objetivo é encontrar um modelo mais parcimonioso que explica os dados, porém quanto mais variáveis no modelo, maior se torna a estimativa do erro e mais dependente o modelo fica dos dados observados. Então, devemos checar a importância das variáveis, incluindo ou excluindo-as do modelo se baseando em uma regra de decisão. Para esta seleção utiliza-se a relação das variáveis preditoras (inpedendentes) com a variável resposta (dependente), analisando sempre a relação de cada variável incluída, observando a significância da mesma.
 
-2. **Estimação dos parâmetros:** a estimação dos parâmetros significa obter valores (estimativas) para os mesmos, para que possamos incluir esses resultados no modelo. 
+2.  **Estimação dos parâmetros:** a estimação dos parâmetros significa obter valores (estimativas) para os mesmos, para que possamos incluir esses resultados no modelo.
 
-3.**Análise residual ou diagnóstico:** auxilia no ajuste final do modelo, identificando observações que influênciam na estimação dos parâmetros e/ou mudança na reta dos ajustados. 
-
+3.**Análise residual ou diagnóstico:** auxilia no ajuste final do modelo, identificando observações que influênciam na estimação dos parâmetros e/ou mudança na reta dos ajustados.
 
 ## Coeficiente de Determinação
 
 Uma das formas de avaliar a qualidade do ajuste do modelo é através do coeficiente de determinação, representado por $R^2$. Este varia entre $0\leq R^2 \leq 1$ e indica quanto o modelo foi capaz de explicar os dados coletados. Vale ressaltar que é pouco comum que tenhamos uma correlação perfeita ($R^2=1$) na prática, porque existem muitos fatores que determinam as relações entre variáveis na vida real. O coeficiente de determinação é dado pela seguinte expressão
 
-\[
-\begin{eqnarray*}
+$ \begin{eqnarray*}
 R^2=\dfrac{\bigg(\sum_{i=1}^n (x_i-\bar{x})Y_i\bigg)^2}{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n (Y_i - \bar{Y})^2}
-\end{eqnarray*}
-\]
+\end{eqnarray*} $
 
 ## Transformação de Yeo-Johnson
 
-Existem situações que a variável em estudo não possui comportamento normal e para o uso da regressão linear múltipla é necessário que a suposição de normalidade seja cumprida. Uma alternativa em experimentos como esse é o uso de alguma transformação na variável resposta. 
+Existem situações que a variável em estudo não possui comportamento normal e para o uso da regressão linear múltipla é necessário que a suposição de normalidade seja cumprida. Uma alternativa em experimentos como esse é o uso de alguma transformação na variável resposta.
 
 A transformação de Box-Cox (1964) é amplamente utilizada, contudo essa transformação é válida apenas em variáveis positivas. Uma alternativa de transformação para variáveis que assumem valores positivos e negativos é a transformação de Yeo-Johnson (2000), essa é uma extensão da transformação de Box-Cox. Sua fórmula é definida a seguir
 
-\[
-\begin{eqnarray*}
+$ \begin{eqnarray*}
 \phi^{(\lambda)}=\left\{\begin{array}{rc}
 \dfrac{(y+1)^\lambda-1}{\lambda},&\mbox{para }\lambda \neq0, y \geq 0\\
 \text{log}(y+1), &\mbox{para } \lambda =0 , y\geq 0 \\
 -\dfrac{(1-y)^{2-\lambda}-1}{2-\lambda},  &\mbox{para } \lambda \neq2 , y < 0 \\
 -\text{log}(1-y), &\mbox{para } \lambda =2 , y < 0 
 \end{array}\right.
-\end{eqnarray*}
-\]
+\end{eqnarray*} $
 
-em que $\lambda$ é um parâmetro desconhecido e $\phi^{(\lambda)}$ é a observação transformada. 
-
+em que $\lambda$ é um parâmetro desconhecido e $\phi^{(\lambda)}$ é a observação transformada.
 
 ## Análise de Regressão Linear e Correlação
+
 A análise de regressão linear consiste em estudar a relação de uma variável dependente(variável resposta) e variáveis independentes(variáveis de regressão), essas variáveis são denominadas variável $y$ e $x$, respectivamente, e essa relação é expressa na forma funcional abaixo descrita a seguir:
 
 $$Y = \beta_{0} + \beta_{1} X_{1} + \ldots + \beta_{p} X_{n}$$
 
-Escrever a variável resposta em função da(s) variável(eis) $x$ implica dizer que existe uma relação linear entre elas. Cada coeficiente do modelo é estimado por meio do método de máxima verossimilhança, o qual obtém-se estimadores com boas propriedades. Quanto a adequabilidade do modelo pode-se testar a partir da análise de variância (ANOVA) se o modelo é adequado ou não. Para isso as hipóteses testadas são 
+Escrever a variável resposta em função da(s) variável(eis) $x$ implica dizer que existe uma relação linear entre elas. Cada coeficiente do modelo é estimado por meio do método de máxima verossimilhança, o qual obtém-se estimadores com boas propriedades. Quanto a adequabilidade do modelo pode-se testar a partir da análise de variância (ANOVA) se o modelo é adequado ou não. Para isso as hipóteses testadas são
 
 $$
 \begin{cases}
@@ -59,22 +53,24 @@ $$
  H_1: \text{Pelo menos um} \; \beta_{j} \; \text{é diferente de zero.}
 \end{cases} $$
 
-A estatística F é usada para testar essas hipóteses. Tomando a seguinte regra de decisão se a estatística $F_{calculada} > F_{tabelada}$ rejeita-se a hipótese  $H_{0}$. Ou se o valor-p for obtido no teste for menor que o alfa de $5\%$.
+A estatística F é usada para testar essas hipóteses. Tomando a seguinte regra de decisão se a estatística $F_{calculada} > F_{tabelada}$ rejeita-se a hipótese $H_{0}$. Ou se o valor-p for obtido no teste for menor que o alfa de $5\%$.
 
- Rejeitar a hipótese $H_{0}$ significa que as co-variáveis são significativas para explicar linearmente a variável resposta.
- 
+Rejeitar a hipótese $H_{0}$ significa que as co-variáveis são significativas para explicar linearmente a variável resposta.
+
 ## Análise de Variância Multivariada
 
 ### (ANOVA) Análise de variância
+
 Assim como o teste t, essa técnica estatística compara a média de grupos, entretanto, enquanto o teste t focaliza em dois grupos, por outro lado, a ANOVA compara três ou mais grupos e, adicionalmente, assume que as variâncias são iguais em todos os grupos (homocedasticidade).
 
 A fim de testar a igualdade das médias, utiliza-se a seguinte estatística de teste:
 
 $$F = \frac{S^2_{entre}}{S^2_{dentro}}$$
 
-Onde o numerador é a variância entre os grupos e o denominador a variância dentro dos grupos para  $k-1$ e $n - k$  graus de liberdade, respectivamente, em que $k$ é o número de grupos e $n$ o número de observações.
+Onde o numerador é a variância entre os grupos e o denominador a variância dentro dos grupos para $k-1$ e $n - k$ graus de liberdade, respectivamente, em que $k$ é o número de grupos e $n$ o número de observações.
 
-### MANOVA 
+### MANOVA
+
 A análise de variância multivariada (MANOVA) é uma forma generalizada da análise de variância (ANOVA). É utilizada em casos onde existem duas ou mais variáveis dependentes. A ferramenta MANOVA permite comparar se há diferença entre os tratamentos para as variáveis respostas. É utilizada a estatística Wilks para testar a igualdade entre os tratamentos, as hipóteses do teste são
 
 $$\begin{cases}
@@ -83,33 +79,26 @@ $$\begin{cases}
 \end{cases}
  $$
 
-em que $ \mu_{i} $ , $i = 1,2,\ldots,k$ são as médias dos tratamentos.
-A estatística $\Lambda^{*}$ foi originalmente proposta por Wilks e corresponde a uma forma equivalente do teste F da hipótese de ausência de efeito de tratamento do caso uni-variado. Que é dada por: 
+em que \$ \mu\_{i} \$ , $i = 1,2,\ldots,k$ são as médias dos tratamentos. A estatística $\Lambda^{*}$ foi originalmente proposta por Wilks e corresponde a uma forma equivalente do teste F da hipótese de ausência de efeito de tratamento do caso uni-variado. Que é dada por:
 
-$$ \Lambda^{*} = \dfrac{|E|}{|H|+|E|}$$ 
+$$ \Lambda^{*} = \dfrac{|E|}{|H|+|E|}$$
 
-Onde, o determinante da soma do quadrado dos erros e dos produtos cruzados, a matriz W é dividida pelo determinante da soma total de quadrados e matriz de produtos cruzados T = H + E. Se H é grande em relação a E, então | H + E | será grande em relação a | E |. Assim, vamos rejeitar a hipótese nula quanto menor for a estatística de Wilks (perto de zero).
-
-
-
+Onde, o determinante da soma do quadrado dos erros e dos produtos cruzados, a matriz W é dividida pelo determinante da soma total de quadrados e matriz de produtos cruzados T = H + E. Se H é grande em relação a E, então \| H + E \| será grande em relação a \| E \|. Assim, vamos rejeitar a hipótese nula quanto menor for a estatística de Wilks (perto de zero).
 
 ## Regressão Linear Múltipla
 
- Podemos definir um modelo de regressão linear múltipla da seguinte maneira:
-\[ 
-\begin{eqnarray*}
+Podemos definir um modelo de regressão linear múltipla da seguinte maneira: $ \begin{eqnarray*}
 Y= \beta_0 + \boldsymbol{\beta}_j\boldsymbol{X}_j+\boldsymbol{\varepsilon}_i,\ i=1,...,n,
-\end{eqnarray*} \]
+\end{eqnarray*} $
 
 em que $j=1,...,p$ e $p$ é o número de parâmetros do modelo.
 
-- $Y$ é um vetor $n\times 1$ correspondente a variável resposta do estudo;
-- $\beta_0$ e $\boldsymbol{\beta}$ correspondem aos parâmetros do modelo, e $\boldsymbol{\beta}$ é um vetor $p\times 1$;
-- $\boldsymbol{X}$ é a matriz de planejamento $n\times p$ correspondente às variáveis independentes do modelo;
-- $\boldsymbol{\varepsilon}_i$ corresponde ao erro experimental, do qual não podemos controlar. Também é conhecido como resíduo.
+-   $Y$ é um vetor $n\times 1$ correspondente a variável resposta do estudo;
+-   $\beta_0$ e $\boldsymbol{\beta}$ correspondem aos parâmetros do modelo, e $\boldsymbol{\beta}$ é um vetor $p\times 1$;
+-   $\boldsymbol{X}$ é a matriz de planejamento $n\times p$ correspondente às variáveis independentes do modelo;
+-   $\boldsymbol{\varepsilon}_i$ corresponde ao erro experimental, do qual não podemos controlar. Também é conhecido como resíduo.
 
+É importante ressaltar que neste relatório iremos expressar qualquer matriz ou vetor por letras em negrito. Além disso, para o uso desses modelos é preciso que algumas suposições sejam aceitas, tais como:
 
-É importante ressaltar que neste relatório iremos expressar qualquer matriz ou vetor por letras em negrito. Além disso, para o uso desses modelos é preciso que algumas suposições sejam aceitas, tais como: 
-
-- Os erros (ou resíduos) devem seguir uma distribuição Normal e serem independentes;
-- Os erros devem possuir médias iguais a zero e serem homocedásticos (variâncias constantes para cada indivíduo).
+-   Os erros (ou resíduos) devem seguir uma distribuição Normal e serem independentes;
+-   Os erros devem possuir médias iguais a zero e serem homocedásticos (variâncias constantes para cada indivíduo).

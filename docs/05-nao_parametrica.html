@@ -221,10 +221,10 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Para estimar a diferença <span class="math inline">\(\Delta\)</span> entre as medianas das populações, consideramos todas as <span class="math inline">\(m \times n\)</span> diferenças <span class="math inline">\(y_i - x_j\)</span> ordenadas de forma crescente.</p>
 <p>O estimador <span class="math inline">\(\hat{\Delta}\)</span> associado a estatística de Wilcoxon-Mann-Whitney é definido por <span class="math inline">\(\hat{\Delta}= \ \hbox{mediana}\{(y_i-x_j), \ i=1,\ldots, n; j=1,\ldots,m\}\)</span>, chamado de pseudo-mediana.</p>
-<p>A estatística de teste, denotada por <span class="math inline">\(W\)</span>, é dada pelo mínimo de <span class="math inline">\(U_m\)</span> e <span class="math inline">\(U_n\)</span> [ <span class="math display">\[\begin{align*}
+<p>A estatística de teste, denotada por <span class="math inline">\(W\)</span>, é dada pelo mínimo de <span class="math inline">\(U_m\)</span> e <span class="math inline">\(U_n\)</span> $ <span class="math display">\[\begin{align*}
     U_m &amp;= S_m - \frac{m(m+1)}{2} \\
     U_n &amp;= S_n - \frac{n(n+1)}{2}
-\end{align*}\]</span> ]</p>
+\end{align*}\]</span> $</p>
 <p>em que:</p>
 <ul>
 <li><span class="math inline">\(S_m\)</span> = Soma dos postos relacionados a amostra <span class="math inline">\(X\)</span>;</li>
@@ -236,19 +236,19 @@ ul.task-list li input[type="checkbox"] {
 <p>O teste de Wilcoxon-Mann-whitney é um teste <strong>não-paramétrico</strong>, ou seja, é um teste usado quando temos poucas ( ou nenhuma) evidências sobre a real distribuição dos dados. Ele se utiliza de passos idênticos aos que usamos para calcular um teste de hipóteses usual.</p>
 <p>Seja <span class="math inline">\(P_1\)</span> e <span class="math inline">\(P_2\)</span> duas população das quais não temos informações sobre suas distribuições, porém, temos que seus dados são qualitativo ordinais ou quantitativos. Retira-se uma amostra de cada uma dessas populações, sendo essas independentes. O procedimento utilizado nesse teste consiste em ordenarmos essas duas amostras de forma combinada, ou seja, ordena-se esses valores sem a necessidade de levar em consideração de qual população o dado provém. Com isso, testaremos se as duas populações têm a mesma mediana, ou seja, se suas distribuições são iguais em localização.</p>
 <p>Sendo <span class="math inline">\(X_1,X_2,...,X_m\)</span> e <span class="math inline">\(Y_1,Y_2,...,Y_n\)</span>, amostras aleatórias independentes e identicamente distribuídas(i.i.d) das populações <span class="math inline">\(P_1\)</span> e <span class="math inline">\(P_2\)</span>, respectivamente. Além disso, essas amostras também serão independentes entre si, sendo essas tomadas de forma que <span class="math inline">\(n\leq m\)</span>.</p>
-<p>Sendo F e G as funções de distribuição correspondentes as populações <span class="math inline">\(P_1\)</span> e <span class="math inline">\(P_2\)</span>, respectivamente, a hipótese nula é tal como segue: [ H_0: F(t) = G(t), ]</p>
+<p>Sendo F e G as funções de distribuição correspondentes as populações <span class="math inline">\(P_1\)</span> e <span class="math inline">\(P_2\)</span>, respectivamente, a hipótese nula é tal como segue: $ H_0: F(t) = G(t), $</p>
 <p>Entretanto, podemos também considerar que Y tem a mesma distribuição de X+<span class="math inline">\(\Delta\)</span>. Perante isso, a hipótese nula será:</p>
-<p>[ H_0: = 0 ]</p>
+<p>$ H_0: = 0 $</p>
 <p>Daí, como estamos interessados apenas em haver diferença entre as medianas, independentemente se essa diferença é negativa ou positiva, utilizamos como hipótese alternativa, uma hipótese bilateral, como vemos abaixo:</p>
-<p>[ H_1: ]</p>
+<p>$ H_1: $</p>
 <p>Com os dados já ordenados em ordem crescente, calculamos <span class="math inline">\(S_m\)</span> e <span class="math inline">\(S_n\)</span>, que serão as somas dos postos de X e Y , respectivamente. Após isso, obteremos:</p>
-<p>[ U_m = S_m - m(m+1) ; ; $U_n = S_n - n(n+1) ]</p>
+<p>$ U_m = S_m - m(m+1) ;$ <span class="math inline">\(; U_n = S_n - \dfrac{1}{2}n(n+1)\)</span></p>
 <p>Após isso, calcula-se a estatistica de teste W, que será o menor valor entre <span class="math inline">\(U_m\)</span> e <span class="math inline">\(U_n\)</span>.</p>
 <p>Sob <span class="math inline">\(H_0\)</span>, espera-se que tenhamos uma distribuição de postos aproximadamente igual, daí, o posto médio das duas amostras deve ser parecido.</p>
 <p>Daí,deve-se encontrar os valores críticos <span class="math inline">\(t_1\)</span> e <span class="math inline">\(t_2\)</span>, de forma que</p>
-<p>[ P[W&lt;t_1] = P[W&gt;t_2] ]</p>
+<p>$ P(W&lt;t_1$ = P<span class="math inline">\(W&gt;t_2\)</span> $ $</p>
 <p>Rejeita-se <span class="math inline">\(H_0\)</span> caso <span class="math inline">\(W_{obs}&lt;t_1\)</span> ou <span class="math inline">\(W_{obs}&gt;t_2\)</span></p>
-<p>Seu valor-p será dado por: [ 2P(W&gt;W_{obs}-1, ]</p>
+<p>Seu valor-p será dado por: $ 2P(W&gt;W_{obs}-1,$\text{ se <span class="math inline">\(W_{obs}&gt;\dfrac{mn}{2}\)</span> ou <span class="math inline">\(2P(W&lt;W_{obs})\)</span>, se $W_{obs} $</p>
 
 
 </section>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://thalisreboucas.com.br/index.html</loc>
-    <lastmod>2023-09-17T14:33:47.976Z</lastmod>
+    <lastmod>2023-09-17T17:03:00.901Z</lastmod>
   </url>
   <url>
     <loc>https://thalisreboucas.com.br/intro.html</loc>
@@ -18,10 +18,30 @@
   </url>
   <url>
     <loc>https://thalisreboucas.com.br/02-descritiva.html</loc>
-    <lastmod>2023-09-17T14:33:51.357Z</lastmod>
+    <lastmod>2023-09-17T17:13:35.367Z</lastmod>
   </url>
   <url>
     <loc>https://thalisreboucas.com.br/03-correlacao.html</loc>
-    <lastmod>2023-09-17T14:33:54.512Z</lastmod>
+    <lastmod>2023-09-17T17:13:35.375Z</lastmod>
+  </url>
+  <url>
+    <loc>https://thalisreboucas.com.br/04-inferencia.html</loc>
+    <lastmod>2023-09-17T17:13:35.388Z</lastmod>
+  </url>
+  <url>
+    <loc>https://thalisreboucas.com.br/08-amostragem.html</loc>
+    <lastmod>2023-09-17T17:13:37.051Z</lastmod>
+  </url>
+  <url>
+    <loc>https://thalisreboucas.com.br/05-nao_parametrica.html</loc>
+    <lastmod>2023-09-17T17:13:35.397Z</lastmod>
+  </url>
+  <url>
+    <loc>https://thalisreboucas.com.br/06-regressao.html</loc>
+    <lastmod>2023-09-17T17:13:35.413Z</lastmod>
+  </url>
+  <url>
+    <loc>https://thalisreboucas.com.br/07-multivariada.html</loc>
+    <lastmod>2023-09-17T17:13:44.988Z</lastmod>
   </url>
 </urlset>

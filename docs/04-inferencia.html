@@ -223,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Ambos os erros devem ser evitados, porém, por questões matemáticas, geralmente só podemos controlar facilmente o Erro Tipo I, por isso, devemos estabelecer as hipóteses de forma que o Erro Tipo I seja o erro mais prejudicial ao processo estudado.</p>
 <p><strong>Nível de significância:</strong> O valor de <span class="math inline">\(\alpha\)</span>, referente ao Erro Tipo I, é chamado de nível de significância, esse valor deve ser pré-estabelecido pelo pesquisador.</p>
 <p><strong>Estatística de teste:</strong> É a estatística amostral na qual basearemos seus valores para decidirmos pela rejeição ou não de <span class="math inline">\(H_0\)</span>. Essa estatística é associada ao estimador do parâmetro que se deseja testar. Por exemplo, ao queremos testar algo sobre o real valor da média populacional <span class="math inline">\(\mu\)</span> (parâmetro),quando conhece-se o valor do desvio padrão populacional (<span class="math inline">\(\sigma\)</span>) utiliza-se a a estatística de teste abaixo:</p>
-<p>[ Z = ] Onde: <span class="math inline">\(\bar{X}\)</span> é a média amostral, sendo ela o <strong>estimador</strong> natural da média populacional; n é o tamanho da nossa amostra.</p>
+<p>$ Z = $ Onde: <span class="math inline">\(\bar{X}\)</span> é a média amostral, sendo ela o <strong>estimador</strong> natural da média populacional; n é o tamanho da nossa amostra.</p>
 <p><strong>Região de Rejeição:</strong> É a região formada pelo conjunto de valores que levam <span class="math inline">\(H_0\)</span> a ser rejeitada. O valor que delimita essa região é denominado valor crítico. Caso o valor calculado da estatística de teste caia nessa região, rejeita-se a hipótese nula.</p>
 <p><strong>Nível descritivo ou valor-p:</strong> É o menor valor para o qual rejeita-se a hipótese nula. Quando esse valor cai na região crítica, rejeita-se <span class="math inline">\(H_0\)</span>. Para sabermos se rejeitaremos ou não <span class="math inline">\(H_0\)</span> baseado no valor-p, deve-se compará-lo com o nível de significância do teste e rejeitar <span class="math inline">\(H_0\)</span>, se aquele for menor do que este, rejeita-se <span class="math inline">\(H_0\)</span>.</p>
 </section>
@@ -251,20 +251,20 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="1.4" class="anchored" data-anchor-id="teste-exato-de-fisher"><span class="header-section-number">1.4</span> Teste Exato de Fisher</h2>
 <p>O Teste Exato de Fisher é utilizado para verificar se existe associação entre as variáveis linha e as variáveis coluna em uma tabela de contingência construída a partir dos dados da amostra. Embora na prática o Teste Exato de Fisher seja aplicado quando os tamanhos das amostras são pequenos, o teste é válido para todos os tamanhos amostrais.</p>
 <p>As hipóteses do teste são:</p>
-[
+$
 <span class="math display">\[\begin{cases}
 H_0:  \text{As variáveis linha e coluna são independentes}; \\
 H_1:  \text{As variáveis linha e coluna não são independentes.}  
 \end{cases}\]</span>
-<p>]</p>
+<p>$</p>
 <p>A estatística de teste, apresentada por Fisher (1934), propõe que a distribuição de probabilidade das frequências de quaisquer tabelas de contingência sejam substituídas pela probabilidade da distribuição das mesmas frequências. Considerando a Tabela <span class="math inline">\(\ref{eq:exemplo}\)</span>, arranjada de modo que <span class="math inline">\(n_{1.}\leq n_{.1}\leq n_{.2}\leq n_{2.}\)</span>, temos uma distribuição de probabilidade hipergeométrica para a única frequência de valor independente, <span class="math inline">\(o_{11}\)</span>, a partir de,</p>
 <p><span class="math display">\[P[X=o_{11}]=\cfrac{\displaystyle{n_{1.} \choose o_{11}} \displaystyle{n_{2.} \choose o_{21}}}{\displaystyle{n \choose n_{.1}}}=\cfrac{n_{1.}!n_{2.}!n_{.1}!n_{.2}!}{o_{11}!o_{12}!o_{21}!o_{22}!n!}\]</span></p>
 <p>O Teste Exato de Fisher consiste na determinação desta probabilidade e dos arranjos possíveis que, com os mesmos totais marginais, tenham ainda mais desvios em relação à hipótese nula <span class="math inline">\(H_0\)</span>.</p>
 </section>
 <section id="teste-de-bonferroni" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="teste-de-bonferroni"><span class="header-section-number">1.5</span> Teste de Bonferroni</h2>
-<p>O teste de bonferroni consiste na realização de um teste t para cada par de médias a uma taxa de erro por comparação (TPC) de <span class="math inline">\(a/(k/2)\)</span>. Usando esse teste, o nível de significância da família é no máximo <span class="math inline">\(a\)</span>, para qualquer média das populações. Assim o teste de Bonferroni protege a taxa de erro da família dos testes. Pode ser usado para quaisquer que sejam os dados balanceados ou não. Não é um teste exato, e assim é baseado na aproximação como primeira desigualdade de Bonferroni. Em diversos momentos ele pode ser um teste conservativo, isto é, a taxa de erro da família testes é muito menor que o nível de significância <span class="math inline">\(a\)</span>. Para tamanhos de amostras iguais o teste de Bonferroni considera duas médias significativamente diferentes se o valor absoluto das diferenças ultrapassar: [ LSD=t_{(a,N-k)} ] E para os dados não balanceados temos:</p>
-<p>[ LSD=t_{(a,N-k)} ]</p>
+<p>O teste de bonferroni consiste na realização de um teste t para cada par de médias a uma taxa de erro por comparação (TPC) de <span class="math inline">\(a/(k/2)\)</span>. Usando esse teste, o nível de significância da família é no máximo <span class="math inline">\(a\)</span>, para qualquer média das populações. Assim o teste de Bonferroni protege a taxa de erro da família dos testes. Pode ser usado para quaisquer que sejam os dados balanceados ou não. Não é um teste exato, e assim é baseado na aproximação como primeira desigualdade de Bonferroni. Em diversos momentos ele pode ser um teste conservativo, isto é, a taxa de erro da família testes é muito menor que o nível de significância <span class="math inline">\(a\)</span>. Para tamanhos de amostras iguais o teste de Bonferroni considera duas médias significativamente diferentes se o valor absoluto das diferenças ultrapassar: $ LSD=t_{(a,N-k)} $ E para os dados não balanceados temos:</p>
+<p>$ LSD=t_{(a,N-k)} $</p>
 <p>Em que <span class="math inline">\(a^\prime=\frac{1}{2}(a/c)\)</span> e <strong>c</strong> é o número de comparações duas a duas. O quantil <span class="math inline">\(t_{(a,N-k)}\)</span> é da distribuição t-Student com parâmetros <span class="math inline">\(N-k\)</span>. Assim a margem de erro da equação anterior depende do número de comparações.</p>
 </section>
 <section id="teste-de-proporção" class="level2" data-number="1.6">
@@ -292,7 +292,7 @@ H_1:  \text{As variáveis linha e coluna não são independentes.}
 <li><strong>Erro tipo 2:</strong> É a probabilidade de não rejeitar a hipótese nula (Ho), quando ela é falsa.</li>
 </ul>
 <p>Probabilidade de acontecer pelo menos um erro do Tipo I em um conjunto de relações estatísticas, assumindo erroneamente que pelo menos uma das diferenças analisadas é significativamente diferente da hipótese nula.</p>
-<p>[ { _{F_W}}= 1-(1- {})^c ] Onde C é o número de comparações, então dessa forma temos que:</p>
+<p>$ { _{F_W}}= 1-(1- {})^c $ Onde C é o número de comparações, então dessa forma temos que:</p>
 <p><span class="math display">\[ c=\frac{k*(k-1)}{2}
 \]</span></p>
 </section>
@@ -341,12 +341,7 @@ H_1: \text{As variáveis linha e coluna possuem proporções diferentes.}
 <li><p>O teste é aplicável tanto para a variável qualitativa quanto quantitativa.</p></li>
 </ol>
 <p>As hipóteses do teste são:</p>
-[
-<span class="math display">\[\begin{cases}
-H_0: \text{As variáveis X e Y são independentes};\\
-H_1: \text{As variáveis X e Y não são independentes.}
-\end{cases}\]</span>
-<p>]</p>
+<p>$ begin{cases} H_0: ;\ H_1: end{cases} $</p>
 <p>A Estatística do teste é dada por:</p>
 <p><span class="math display">\[\chi^2 = \sum_i\sum_j\frac{(o_{ij} - e_{ij}^2)}{e_{ij}}\]</span></p>
 <p>onde: - <span class="math inline">\(o_{ij}\)</span> é o valor observado na célula; - <span class="math inline">\(e_{ij}\)</span> é o valor esperado - <span class="math inline">\(e_{ij} = \frac{\text{total da linha i} * \text{total da coluna j}}{\text{total geral}}\)</span></p>
@@ -355,13 +350,14 @@ H_1: \text{As variáveis X e Y não são independentes.}
 <section id="teste-qui-quadrado-1" class="level3" data-number="1.10.2">
 <h3 data-number="1.10.2" class="anchored" data-anchor-id="teste-qui-quadrado-1"><span class="header-section-number">1.10.2</span> Teste Qui-Quadrado</h3>
 <p>O teste <span class="math inline">\(\chi^2\)</span> ( Qui- Quadrado) é um dos testes usados para avaliar se há independência entre variáveis qualitativas, para isso, devemos dispor nossos dados em uma tabela de contingência, no caso em que queremos testar a hipótese de independência entre exatamente duas variáveis, utiliza-se uma tabela de dupla entrada.</p>
-Para realizar o teste, iremos testar a hipótese como segue: [
+Para realizar o teste, iremos testar a hipótese como segue: $
 <span class="math display">\[\begin{cases}
   H_0: \text{As variáveis são independentes;} \\
   H_1: \text{As variáveis não são independentes.}
   \end{cases}\]</span>
-<p>] Para isso, utilizaremos a estatística de teste abaixo:</p>
-<p>[ = ]</p>
+<p>$</p>
+<p>Para isso, utilizaremos a estatística de teste abaixo:</p>
+<p>$ = $</p>
 <p>onde:</p>
 <p><strong>k</strong> é o número de linhas da tabela ;</p>
 <p><strong>l</strong> é o número de colunas;</p>
@@ -371,7 +367,7 @@ Para realizar o teste, iremos testar a hipótese como segue: [
 <p>Assim como nos demais testes de hipóteses, rejeitaremos <span class="math inline">\(H_0\)</span> caso a probabilidade encontrada seja menor do que o nível de significância estipulado.</p>
 <p>Porém, esse teste apresenta problemas quando temos um número de observações considerado pequeno - geralmente considera-se “pequeno” um tamanho amostral menor do que 40 unidades - ou quando temos em uma das caselas de cruzamento um número esperado menor do que 5. Nesses casos, utiliza-se uma correção para uma melhor estimação.</p>
 <p>A correção indicada para esse caso é a de Yates ou de Continuidade, pela qual o valor do teste Qui-Quadrado será recalculado como se segue:</p>
-<p>[ = . ]</p>
+<p>$ = . $</p>
 
 
 </section>

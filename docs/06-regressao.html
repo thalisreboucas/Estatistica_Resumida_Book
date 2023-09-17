@@ -221,22 +221,22 @@ ul.task-list li input[type="checkbox"] {
 <section id="coeficiente-de-determinação" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="coeficiente-de-determinação"><span class="header-section-number">3.2</span> Coeficiente de Determinação</h2>
 <p>Uma das formas de avaliar a qualidade do ajuste do modelo é através do coeficiente de determinação, representado por <span class="math inline">\(R^2\)</span>. Este varia entre <span class="math inline">\(0\leq R^2 \leq 1\)</span> e indica quanto o modelo foi capaz de explicar os dados coletados. Vale ressaltar que é pouco comum que tenhamos uma correlação perfeita (<span class="math inline">\(R^2=1\)</span>) na prática, porque existem muitos fatores que determinam as relações entre variáveis na vida real. O coeficiente de determinação é dado pela seguinte expressão</p>
-<p>[ <span class="math display">\[\begin{eqnarray*}
+<p>$ <span class="math display">\[\begin{eqnarray*}
 R^2=\dfrac{\bigg(\sum_{i=1}^n (x_i-\bar{x})Y_i\bigg)^2}{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n (Y_i - \bar{Y})^2}
-\end{eqnarray*}\]</span> ]</p>
+\end{eqnarray*}\]</span> $</p>
 </section>
 <section id="transformação-de-yeo-johnson" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="transformação-de-yeo-johnson"><span class="header-section-number">3.3</span> Transformação de Yeo-Johnson</h2>
 <p>Existem situações que a variável em estudo não possui comportamento normal e para o uso da regressão linear múltipla é necessário que a suposição de normalidade seja cumprida. Uma alternativa em experimentos como esse é o uso de alguma transformação na variável resposta.</p>
 <p>A transformação de Box-Cox (1964) é amplamente utilizada, contudo essa transformação é válida apenas em variáveis positivas. Uma alternativa de transformação para variáveis que assumem valores positivos e negativos é a transformação de Yeo-Johnson (2000), essa é uma extensão da transformação de Box-Cox. Sua fórmula é definida a seguir</p>
-<p>[ <span class="math display">\[\begin{eqnarray*}
+<p>$ <span class="math display">\[\begin{eqnarray*}
 \phi^{(\lambda)}=\left\{\begin{array}{rc}
 \dfrac{(y+1)^\lambda-1}{\lambda},&amp;\mbox{para }\lambda \neq0, y \geq 0\\
 \text{log}(y+1), &amp;\mbox{para } \lambda =0 , y\geq 0 \\
 -\dfrac{(1-y)^{2-\lambda}-1}{2-\lambda},  &amp;\mbox{para } \lambda \neq2 , y &lt; 0 \\
 -\text{log}(1-y), &amp;\mbox{para } \lambda =2 , y &lt; 0
 \end{array}\right.
-\end{eqnarray*}\]</span> ]</p>
+\end{eqnarray*}\]</span> $</p>
 <p>em que <span class="math inline">\(\lambda\)</span> é um parâmetro desconhecido e <span class="math inline">\(\phi^{(\lambda)}\)</span> é a observação transformada.</p>
 </section>
 <section id="análise-de-regressão-linear-e-correlação" class="level2" data-number="3.4">
@@ -276,9 +276,9 @@ H_1: \text{Pelo menos um} \; \beta_{j} \; \text{é diferente de zero.}
 </section>
 <section id="regressão-linear-múltipla" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="regressão-linear-múltipla"><span class="header-section-number">3.6</span> Regressão Linear Múltipla</h2>
-<p>Podemos definir um modelo de regressão linear múltipla da seguinte maneira: [ <span class="math display">\[\begin{eqnarray*}
+<p>Podemos definir um modelo de regressão linear múltipla da seguinte maneira: $ <span class="math display">\[\begin{eqnarray*}
 Y= \beta_0 + \boldsymbol{\beta}_j\boldsymbol{X}_j+\boldsymbol{\varepsilon}_i,\ i=1,...,n,
-\end{eqnarray*}\]</span> ]</p>
+\end{eqnarray*}\]</span> $</p>
 <p>em que <span class="math inline">\(j=1,...,p\)</span> e <span class="math inline">\(p\)</span> é o número de parâmetros do modelo.</p>
 <ul>
 <li><span class="math inline">\(Y\)</span> é um vetor <span class="math inline">\(n\times 1\)</span> correspondente a variável resposta do estudo;</li>

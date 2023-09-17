@@ -6,7 +6,11 @@ output:
 
 # Análise Descritiva {.unnumbered}
 
+A análise descritiva é uma técnica estatística utilizada para resumir, organizar e apresentar informações de um conjunto de dados de forma clara e concisa. Seu objetivo principal é descrever as principais características dos dados, como tendências, variações e padrões, sem realizar inferências estatísticas ou generalizações sobre uma população maior. Em vez disso, a análise descritiva concentra-se na exploração dos dados disponíveis.
+
 ## Medidas de Posição
+
+Medidas de posição são estatísticas usadas para descrever a posição relativa de um valor em um conjunto de dados. Elas ajudam a entender onde um valor específico se encaixa em relação aos outros valores no conjunto.
 
 ### Média
 
@@ -14,7 +18,7 @@ Em um conjuto de dados temos um número $n$ de valores e a soma total desse conj
 
 Seja ${\displaystyle n}$ o número total de valores e ${\displaystyle x_{i}}$ cada valor, em que ${\displaystyle i=1,\dots ,n}$. Média aritmética é a soma dos valores ${\displaystyle x_{i}}$ dividido pelo número total de valores ${\displaystyle n}$:
 
-**Formula :** \[\bar{x} = \dfrac{x_1 + \ldots +x_n}{n} = \frac{1}{n}\sum\_{i-1}\^{n}x_i \]
+**Formula :** $\bar{x} = \dfrac{x_1 + \ldots +x_n}{n} = \frac{1}{n}\sum_{i-1}^{n}x_i$
 
 ### Mediana
 
@@ -52,7 +56,7 @@ A variância é determinada pela média dos quadrados das diferenças entre cada
 
 -   Variância Populacional
 
-\[ \sigma \^{2}={\frac  {1}{N}}\sum \_{{i=1}}^{N}^\left(x\_{i}-\mu \right){2}, \]
+$\sigma^{2}=\frac{1}{N}\sum_{i=1}^{N}\left(x\_{i}-\mu \right)^{2}$,
 
 Sendo,
 
@@ -63,11 +67,11 @@ Sendo,
 
 ### Desvio Padrão
 
-\[ \sigma(S) = \sqrt{Variância} \]
+$\sigma(S) = \sqrt{Variância}$
 
 ### Coeficiente de Variação
 
-\[cv = \dfrac{\sigma}{\bar(x)} \]
+$cv = \dfrac{\sigma}{\bar(x)}$
 
 ## Tabela de contingência
 
@@ -90,15 +94,7 @@ O teste de McNemar é utilizado em tabelas de contingência, essencialmente em t
 
 As hipóteses do teste são:
 
-\[ \left{
-
-```{=tex}
-\begin{array}{l}
-H_0: \text{As variáveis linha e coluna possuem as mesmas proporções},\\
-H_1:  \text{As variáveis linha e coluna possuem proporções diferentes}. \\ 
-\end{array}
-```
-\right. \]
+$\begin{cases} H_0: \text{As variáveis linha e coluna possuem as mesmas proporções},\\ H_1: \text{As variáveis linha e coluna possuem proporções diferentes}. \end{cases}$
 
 A estatística do teste, $Q$, é dada por: $$ Q=\cfrac{(a-d)^2}{(a+d)} $$ em que $Q \sim \chi^2(1)$, lê-se $Q$ segue uma distribuição qui-quadrado com 1 grau de liberdade.
 
@@ -108,9 +104,8 @@ A tabela de classes é usada quando temos dados brutos provenientes de uma vari�
 
 Suponhamos que desejamos construir K classes. O valor mínimo da nossa amostra(mín) e o máximo(máx). A partir dessas informações, calculamos a amplitude total(AT):
 
-\[ \text{AT = máx – mín.}\
-\] Como o número de classes (k) é dada por: \[ k = 1+3,3$\log(n)$. \]
+$\text{AT = máx – mín.}$ Como o número de classes (k) é dada por: $k = 1+3,3 \log(n)$.
 
 A amplitude de cada classe (h) é dada por:
 
-\[ h = \frac{AT}{k}. \]
+$h = \frac{AT}{k}.$
