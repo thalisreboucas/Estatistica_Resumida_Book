@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Thalis Rebouças">
 
-<title>Estatisca Resumida</title>
+<title>Estatisca Resumida - 6&nbsp; Gráficos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-descritiva.html" rel="next">
+<link href="./10-referencia.html" rel="next">
+<link href="./08-amostragem.html" rel="prev">
 <link href="./cover.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -61,6 +61,14 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.10.2/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
 
 
 </head>
@@ -74,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Bem vindos</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./09-graficos.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Gráficos</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -104,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bem vindos</span></a>
   </div>
 </li>
@@ -152,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./09-graficos.html" class="sidebar-item-text sidebar-link">
+  <a href="./09-graficos.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Gráficos</span></span></a>
   </div>
 </li>
@@ -172,7 +180,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bem-vindos" id="toc-bem-vindos" class="nav-link active" data-scroll-target="#bem-vindos">Bem vindos</a></li>
+  <li><a href="#barras" id="toc-barras" class="nav-link active" data-scroll-target="#barras"><span class="header-section-number">6.1</span> Barras</a></li>
+  <li><a href="#circular-pizza" id="toc-circular-pizza" class="nav-link" data-scroll-target="#circular-pizza"><span class="header-section-number">6.2</span> Circular (Pizza)</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">6.3</span> Boxplot</a>
+  <ul class="collapse">
+  <li><a href="#boxplot-violino" id="toc-boxplot-violino" class="nav-link" data-scroll-target="#boxplot-violino"><span class="header-section-number">6.3.1</span> Boxplot + Violino</a></li>
+  </ul></li>
+  <li><a href="#linhas" id="toc-linhas" class="nav-link" data-scroll-target="#linhas"><span class="header-section-number">6.4</span> Linhas</a></li>
   </ul>
 </nav>
     </div>
@@ -181,19 +195,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Estatisca Resumida</h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Gráficos</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Thalis Rebouças </p>
-          </div>
-  </div>
     
   
     
@@ -202,14 +210,53 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-
-<section id="bem-vindos" class="level1 unnumbered">
-<h1 class="unnumbered">Bem vindos</h1><p><img src="cover.jpg" title="Estatisca Resumida" class="quarto-cover-image img-fluid"></p>
-<p>Estatística Resumida <em>BOOK</em> é um livro que oferece uma introdução completa e acessível aos princípios e métodos da estatística, focando especialmente na sua aplicação prática. Este livro é destinado a estudantes, profissionais e entusiastas que desejam compreender e aplicar conceitos estatísticos de forma eficiente em diversas áreas.</p>
-<p>A obra inicia com uma explicação dos fundamentos da estatística, apresentando os principais conceitos, como população, amostra, variável, medidas de tendência central e de dispersão. Em seguida, aborda os diferentes tipos de estudos estatísticos e suas respectivas metodologias, incluindo estudos observacionais e experimentais.</p>
-<p>Uma parte significativa do livro é dedicada à coleta, organização e análise de dados. Os leitores aprenderão técnicas para selecionar amostras representativas, conduzir pesquisas e experimentos, além de explorar e visualizar os dados utilizando gráficos e tabelas. A importância da interpretação correta dos resultados estatísticos é enfatizada ao longo de todo o texto.</p>
-<p>A obra também explora os principais métodos estatísticos, como inferência estatística, teste de hipóteses, regressão e correlação. Cada método é explicado de forma clara e ilustrado com exemplos do mundo real, permitindo aos leitores compreender como aplicar essas técnicas em situações reais.</p>
-<p>Além disso, o livro aborda tópicos avançados, como análise multivariada, séries temporais e análise de sobrevivência, ampliando ainda mais o conhecimento estatístico dos leitores.</p>
+<section id="barras" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="barras"><span class="header-section-number">6.1</span> Barras</h2>
+<p>Este é um gráfico que utiliza barras retangulares e o seu comprimento representa os dados proporcionalmente a escala do eixo que estão os dados. Estas Barras podem estar na vertical ou na Horizontal.Além disso, é um gráfico muito utilizado para representar valores discretos.Neles conseguimos compreender a quantidade de cada item pelo tamanho da barra retangular.</p>
+<ul>
+<li>Histograma é um gráfico de barras que demonstra a distribuição de dados e frequências. A base de cada uma de suas barras representa uma classe e a altura a frequência em que a classe ocorre.</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-13c949d8ffa0160029f7" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-13c949d8ffa0160029f7">{"x":{"visdat":{"5f4c6d691eed":["function () ","plotlyVisDat"]},"cur_data":"5f4c6d691eed","attrs":{"5f4c6d691eed":{"x":["a","b","c"],"y":[20,15,23],"name":"Barras","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":[],"type":"category","categoryorder":"array","categoryarray":["a","b","c"]},"yaxis":{"domain":[0,1],"automargin":true,"title":[]},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["a","b","c"],"y":[20,15,23],"name":"Barras","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="circular-pizza" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="circular-pizza"><span class="header-section-number">6.2</span> Circular (Pizza)</h2>
+<p>Este é um gráfico que cada fatia representa uma categoria de dados que compõe o todo. Juntas, as fatias representam 100%. O tamanho de cada fatia é relativo à sua porção do todo. Se há muitas categorias de dados apresentadas, a leitura do gráfico de pizza pode ficar bem prejudicada. O intuito do gráfico de pizza é que todas as informações fiquem claras à primeira vista.</p>
+<p>Um gráfico de rosca é um tipo de gráfico de pizza, mas em vez de apresentar os dados em um formato de círculo sólido, apresenta as informações em um formato de rosca. Eles têm basicamente a mesma função e podem ser usados alternadamente, de acordo do aspecto visual que você estiver buscando.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-4e035f1101d1bb78cacc" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-4e035f1101d1bb78cacc">{"x":{"visdat":{"5f4c61b6530f":["function () ","plotlyVisDat"]},"cur_data":"5f4c61b6530f","attrs":{"5f4c61b6530f":{"labels":["a","b","c","d"],"values":[3500,1500,4053,500],"textinfo":"label+percent","insidetextorientation":"radial","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"pie"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"labels":["a","b","c","d"],"values":[3500,1500,4053,500],"textinfo":"label+percent","insidetextorientation":"radial","type":"pie","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="boxplot" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">6.3</span> Boxplot</h2>
+<p>Este é um gráfico que utiliza um diagrama de caixa é uma ferramenta gráfica que permite visualizar a distribuição e valores discrepantes (outliers) dos dados.Além disso, o boxplot também é uma disposição gráfica comparativa.As medidas de estatísticas descritivas como o mínimo, máximo, primeiro quartil, segundo quartil ou mediana e o terceiro quartil formam o boxplot.</p>
+<section id="boxplot-violino" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="boxplot-violino"><span class="header-section-number">6.3.1</span> Boxplot + Violino</h3>
+<p>O “violino” são as curvas no entorno do gráfico boxplot, e representa a função densidade de probabilidade estimada via kernel (basicamente, as curvas mais largas representam maior densidade de pontos, ou seja, existe uma maior frequência de pontos). Esse tipo de representação pode ser útil para alguns conjuntos de dados, pois pelo fato do boxplot resumir os dados em 5 medidas descritivas, pode haver perda de informação. Já o “violino” resume os dados em uma função densidade, caracterizando melhor o conjunto de dados.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5f9ab665f894d73f1c3c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5f9ab665f894d73f1c3c">{"x":{"visdat":{"5f4c6ffa28fb":["function () ","plotlyVisDat"]},"cur_data":"5f4c6ffa28fb","attrs":{"5f4c6ffa28fb":{"y":{},"box":{"visible":true},"meanline":{"visible":true},"x0":"a","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"violin"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zeroline":false},"xaxis":{"domain":[0,1],"automargin":true},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"fillcolor":"rgba(31,119,180,0.5)","y":[16.989999999999998,10.34,21.010000000000002,23.68,24.59,25.289999999999999,8.7699999999999996,26.879999999999999,15.039999999999999,14.779999999999999,10.27,35.259999999999998,15.42,18.43,14.83,21.579999999999998,10.33,16.289999999999999,16.969999999999999,20.649999999999999,17.920000000000002,20.289999999999999,15.77,39.420000000000002,19.82,17.809999999999999,13.369999999999999,12.69,21.699999999999999,19.649999999999999,9.5500000000000007,18.350000000000001,15.06,20.690000000000001,17.780000000000001,24.059999999999999,16.309999999999999,16.93,18.690000000000001,31.27,16.039999999999999,17.460000000000001,13.94,9.6799999999999997,30.399999999999999,18.289999999999999,22.23,32.399999999999999,28.550000000000001,18.039999999999999,12.539999999999999,10.289999999999999,34.810000000000002,9.9399999999999995,25.559999999999999,19.489999999999998,38.009999999999998,26.41,11.24,48.270000000000003,20.289999999999999,13.81,11.02,18.289999999999999,17.59,20.079999999999998,16.449999999999999,3.0699999999999998,20.23,15.01,12.02,17.07,26.859999999999999,25.280000000000001,14.73,10.51,17.920000000000002,27.199999999999999,22.760000000000002,17.289999999999999,19.440000000000001,16.66,10.07,32.68,15.98,34.829999999999998,13.029999999999999,18.280000000000001,24.710000000000001,21.16,28.969999999999999,22.489999999999998,5.75,16.32,22.75,40.170000000000002,27.280000000000001,12.029999999999999,21.010000000000002,12.460000000000001,11.35,15.380000000000001,44.299999999999997,22.420000000000002,20.920000000000002,15.359999999999999,20.489999999999998,25.210000000000001,18.239999999999998,14.31,14,7.25,38.07,23.949999999999999,25.710000000000001,17.309999999999999,29.93,10.65,12.43,24.079999999999998,11.69,13.42,14.26,15.949999999999999,12.48,29.800000000000001,8.5199999999999996,14.52,11.380000000000001,22.82,19.079999999999998,20.27,11.17,12.26,18.260000000000002,8.5099999999999998,10.33,14.15,16,13.16,17.469999999999999,34.299999999999997,41.189999999999998,27.050000000000001,16.43,8.3499999999999996,18.640000000000001,11.869999999999999,9.7799999999999994,7.5099999999999998,14.07,13.130000000000001,17.260000000000002,24.550000000000001,19.77,29.850000000000001,48.170000000000002,25,13.390000000000001,16.489999999999998,21.5,12.66,16.210000000000001,13.81,17.510000000000002,24.52,20.760000000000002,31.710000000000001,10.59,10.630000000000001,50.810000000000002,15.81,7.25,31.850000000000001,16.82,32.899999999999999,17.890000000000001,14.48,9.5999999999999996,34.630000000000003,34.649999999999999,23.329999999999998,45.350000000000001,23.170000000000002,40.549999999999997,20.690000000000001,20.899999999999999,30.460000000000001,18.149999999999999,23.100000000000001,15.69,19.809999999999999,28.440000000000001,15.48,16.579999999999998,7.5599999999999996,10.34,43.109999999999999,13,13.51,18.710000000000001,12.74,13,16.399999999999999,20.530000000000001,16.469999999999999,26.59,38.729999999999997,24.27,12.76,30.059999999999999,25.890000000000001,48.329999999999998,13.27,28.170000000000002,12.9,28.149999999999999,11.59,7.7400000000000002,30.140000000000001,12.16,13.42,8.5800000000000001,15.98,13.42,16.27,10.09,20.449999999999999,13.279999999999999,22.120000000000001,24.010000000000002,15.69,11.609999999999999,10.77,15.529999999999999,10.07,12.6,32.829999999999998,35.829999999999998,29.030000000000001,27.18,22.670000000000002,17.82,18.780000000000001],"box":{"visible":true},"meanline":{"visible":true},"x0":"a","type":"violin","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+</section>
+<section id="linhas" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="linhas"><span class="header-section-number">6.4</span> Linhas</h2>
+<p>Este é um gráfico de linhas continuas para a visualização de dados em linhas do tempo, serve para ver a tendencia e a sazonalidade do que esta ocorrendo com os dados,geralmente o eixo Y são onde fica os dias,meses ou anos e o eixo X é onde fica uma escala discreta ou continua em relação ao tipo de dado.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-e5e942160fa0dc0cc238" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-e5e942160fa0dc0cc238">{"x":{"visdat":{"5f4c10192f10":["function () ","plotlyVisDat"]},"cur_data":"5f4c10192f10","attrs":{"5f4c10192f10":{"x":{},"y":{},"mode":"lines","name":"Gaps","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"x"},"yaxis":{"domain":[0,1],"automargin":true,"title":"y"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"y":[10,20,12,15,10,5,15,15,20,10,10,15,25,20,10],"mode":"lines","name":"Gaps","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 
 </section>
@@ -450,10 +497,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./08-amostragem.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Amostragem</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-descritiva.html" class="pagination-link">
-        <span class="nav-page-text">Análise Descritiva</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./10-referencia.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Referências</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

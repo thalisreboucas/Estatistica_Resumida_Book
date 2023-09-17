@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Thalis Rebouças">
 
-<title>Estatisca Resumida</title>
+<title>Estatisca Resumida - 3&nbsp; Regressão</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02-descritiva.html" rel="next">
+<link href="./07-multivariada.html" rel="next">
+<link href="./05-nao_parametrica.html" rel="prev">
 <link href="./cover.jpg" rel="icon" type="image/jpeg">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -62,6 +62,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -74,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Bem vindos</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-regressao.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regressão</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -104,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bem vindos</span></a>
   </div>
 </li>
@@ -134,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./06-regressao.html" class="sidebar-item-text sidebar-link">
+  <a href="./06-regressao.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regressão</span></span></a>
   </div>
 </li>
@@ -172,7 +174,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#bem-vindos" id="toc-bem-vindos" class="nav-link active" data-scroll-target="#bem-vindos">Bem vindos</a></li>
+  <li><a href="#modelos-de-regressão" id="toc-modelos-de-regressão" class="nav-link active" data-scroll-target="#modelos-de-regressão"><span class="header-section-number">3.1</span> Modelos de Regressão</a></li>
+  <li><a href="#coeficiente-de-determinação" id="toc-coeficiente-de-determinação" class="nav-link" data-scroll-target="#coeficiente-de-determinação"><span class="header-section-number">3.2</span> Coeficiente de Determinação</a></li>
+  <li><a href="#transformação-de-yeo-johnson" id="toc-transformação-de-yeo-johnson" class="nav-link" data-scroll-target="#transformação-de-yeo-johnson"><span class="header-section-number">3.3</span> Transformação de Yeo-Johnson</a></li>
+  <li><a href="#análise-de-regressão-linear-e-correlação" id="toc-análise-de-regressão-linear-e-correlação" class="nav-link" data-scroll-target="#análise-de-regressão-linear-e-correlação"><span class="header-section-number">3.4</span> Análise de Regressão Linear e Correlação</a></li>
+  <li><a href="#análise-de-variância-multivariada" id="toc-análise-de-variância-multivariada" class="nav-link" data-scroll-target="#análise-de-variância-multivariada"><span class="header-section-number">3.5</span> Análise de Variância Multivariada</a>
+  <ul class="collapse">
+  <li><a href="#anova-análise-de-variância" id="toc-anova-análise-de-variância" class="nav-link" data-scroll-target="#anova-análise-de-variância"><span class="header-section-number">3.5.1</span> (ANOVA) Análise de variância</a></li>
+  <li><a href="#manova" id="toc-manova" class="nav-link" data-scroll-target="#manova"><span class="header-section-number">3.5.2</span> MANOVA</a></li>
+  </ul></li>
+  <li><a href="#regressão-linear-múltipla" id="toc-regressão-linear-múltipla" class="nav-link" data-scroll-target="#regressão-linear-múltipla"><span class="header-section-number">3.6</span> Regressão Linear Múltipla</a></li>
   </ul>
 </nav>
     </div>
@@ -181,19 +192,13 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Estatisca Resumida</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regressão</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Thalis Rebouças </p>
-          </div>
-  </div>
     
   
     
@@ -202,14 +207,90 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-
-<section id="bem-vindos" class="level1 unnumbered">
-<h1 class="unnumbered">Bem vindos</h1><p><img src="cover.jpg" title="Estatisca Resumida" class="quarto-cover-image img-fluid"></p>
-<p>Estatística Resumida <em>BOOK</em> é um livro que oferece uma introdução completa e acessível aos princípios e métodos da estatística, focando especialmente na sua aplicação prática. Este livro é destinado a estudantes, profissionais e entusiastas que desejam compreender e aplicar conceitos estatísticos de forma eficiente em diversas áreas.</p>
-<p>A obra inicia com uma explicação dos fundamentos da estatística, apresentando os principais conceitos, como população, amostra, variável, medidas de tendência central e de dispersão. Em seguida, aborda os diferentes tipos de estudos estatísticos e suas respectivas metodologias, incluindo estudos observacionais e experimentais.</p>
-<p>Uma parte significativa do livro é dedicada à coleta, organização e análise de dados. Os leitores aprenderão técnicas para selecionar amostras representativas, conduzir pesquisas e experimentos, além de explorar e visualizar os dados utilizando gráficos e tabelas. A importância da interpretação correta dos resultados estatísticos é enfatizada ao longo de todo o texto.</p>
-<p>A obra também explora os principais métodos estatísticos, como inferência estatística, teste de hipóteses, regressão e correlação. Cada método é explicado de forma clara e ilustrado com exemplos do mundo real, permitindo aos leitores compreender como aplicar essas técnicas em situações reais.</p>
-<p>Além disso, o livro aborda tópicos avançados, como análise multivariada, séries temporais e análise de sobrevivência, ampliando ainda mais o conhecimento estatístico dos leitores.</p>
+<section id="modelos-de-regressão" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="modelos-de-regressão"><span class="header-section-number">3.1</span> Modelos de Regressão</h2>
+<p>Em diversos estudos é de extrema importância verificar se duas ou mais variáveis estão relacionadas entre si. Uma alternativa é determinar um modelo matemático que expresse tal relação, e na estatística este tipo de análise é conhecido como: <strong>Análise de Regressão</strong>. Em outras palavras, modelos de regressão nos ajudam a compreender melhor como uma variável influência no comportamento de outras.</p>
+<p>Caso o interesse da pesquisa seja avaliar a relação da variável dependente (expressa por <span class="math inline">\(Y\)</span>) com apenas uma variável independente (<span class="math inline">\(X\)</span>), estamos lidando com <strong>Regressão Linear Simples</strong>. Porém, se for necessária a verificação de duas ou mais variáveis independentes, temos um caso de <strong>Regressão Linear Múltipla</strong>.</p>
+<p>Os modelos de regressão múltipla são construídos pelos seguintes passos:</p>
+<ol type="1">
+<li><p><strong>Seleção de variáveis:</strong> a priori, não sabemos quais são as variáveis independentes que influenciam de forma mais significativa na variável resposta (dependente). O objetivo é encontrar um modelo mais parcimonioso que explica os dados, porém quanto mais variáveis no modelo, maior se torna a estimativa do erro e mais dependente o modelo fica dos dados observados. Então, devemos checar a importância das variáveis, incluindo ou excluindo-as do modelo se baseando em uma regra de decisão. Para esta seleção utiliza-se a relação das variáveis preditoras (inpedendentes) com a variável resposta (dependente), analisando sempre a relação de cada variável incluída, observando a significância da mesma.</p></li>
+<li><p><strong>Estimação dos parâmetros:</strong> a estimação dos parâmetros significa obter valores (estimativas) para os mesmos, para que possamos incluir esses resultados no modelo.</p></li>
+</ol>
+<p>3.<strong>Análise residual ou diagnóstico:</strong> auxilia no ajuste final do modelo, identificando observações que influênciam na estimação dos parâmetros e/ou mudança na reta dos ajustados.</p>
+</section>
+<section id="coeficiente-de-determinação" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="coeficiente-de-determinação"><span class="header-section-number">3.2</span> Coeficiente de Determinação</h2>
+<p>Uma das formas de avaliar a qualidade do ajuste do modelo é através do coeficiente de determinação, representado por <span class="math inline">\(R^2\)</span>. Este varia entre <span class="math inline">\(0\leq R^2 \leq 1\)</span> e indica quanto o modelo foi capaz de explicar os dados coletados. Vale ressaltar que é pouco comum que tenhamos uma correlação perfeita (<span class="math inline">\(R^2=1\)</span>) na prática, porque existem muitos fatores que determinam as relações entre variáveis na vida real. O coeficiente de determinação é dado pela seguinte expressão</p>
+<p>[ <span class="math display">\[\begin{eqnarray*}
+R^2=\dfrac{\bigg(\sum_{i=1}^n (x_i-\bar{x})Y_i\bigg)^2}{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n (Y_i - \bar{Y})^2}
+\end{eqnarray*}\]</span> ]</p>
+</section>
+<section id="transformação-de-yeo-johnson" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="transformação-de-yeo-johnson"><span class="header-section-number">3.3</span> Transformação de Yeo-Johnson</h2>
+<p>Existem situações que a variável em estudo não possui comportamento normal e para o uso da regressão linear múltipla é necessário que a suposição de normalidade seja cumprida. Uma alternativa em experimentos como esse é o uso de alguma transformação na variável resposta.</p>
+<p>A transformação de Box-Cox (1964) é amplamente utilizada, contudo essa transformação é válida apenas em variáveis positivas. Uma alternativa de transformação para variáveis que assumem valores positivos e negativos é a transformação de Yeo-Johnson (2000), essa é uma extensão da transformação de Box-Cox. Sua fórmula é definida a seguir</p>
+<p>[ <span class="math display">\[\begin{eqnarray*}
+\phi^{(\lambda)}=\left\{\begin{array}{rc}
+\dfrac{(y+1)^\lambda-1}{\lambda},&amp;\mbox{para }\lambda \neq0, y \geq 0\\
+\text{log}(y+1), &amp;\mbox{para } \lambda =0 , y\geq 0 \\
+-\dfrac{(1-y)^{2-\lambda}-1}{2-\lambda},  &amp;\mbox{para } \lambda \neq2 , y &lt; 0 \\
+-\text{log}(1-y), &amp;\mbox{para } \lambda =2 , y &lt; 0
+\end{array}\right.
+\end{eqnarray*}\]</span> ]</p>
+<p>em que <span class="math inline">\(\lambda\)</span> é um parâmetro desconhecido e <span class="math inline">\(\phi^{(\lambda)}\)</span> é a observação transformada.</p>
+</section>
+<section id="análise-de-regressão-linear-e-correlação" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="análise-de-regressão-linear-e-correlação"><span class="header-section-number">3.4</span> Análise de Regressão Linear e Correlação</h2>
+<p>A análise de regressão linear consiste em estudar a relação de uma variável dependente(variável resposta) e variáveis independentes(variáveis de regressão), essas variáveis são denominadas variável <span class="math inline">\(y\)</span> e <span class="math inline">\(x\)</span>, respectivamente, e essa relação é expressa na forma funcional abaixo descrita a seguir:</p>
+<p><span class="math display">\[Y = \beta_{0} + \beta_{1} X_{1} + \ldots + \beta_{p} X_{n}\]</span></p>
+<p>Escrever a variável resposta em função da(s) variável(eis) <span class="math inline">\(x\)</span> implica dizer que existe uma relação linear entre elas. Cada coeficiente do modelo é estimado por meio do método de máxima verossimilhança, o qual obtém-se estimadores com boas propriedades. Quanto a adequabilidade do modelo pode-se testar a partir da análise de variância (ANOVA) se o modelo é adequado ou não. Para isso as hipóteses testadas são</p>
+<p><span class="math display">\[
+\begin{cases}
+H_0: \beta_{0} = \beta_{1} = \ldots = \beta_{p} = 0; \\
+H_1: \text{Pelo menos um} \; \beta_{j} \; \text{é diferente de zero.}
+\end{cases} \]</span></p>
+<p>A estatística F é usada para testar essas hipóteses. Tomando a seguinte regra de decisão se a estatística <span class="math inline">\(F_{calculada} &gt; F_{tabelada}\)</span> rejeita-se a hipótese <span class="math inline">\(H_{0}\)</span>. Ou se o valor-p for obtido no teste for menor que o alfa de <span class="math inline">\(5\%\)</span>.</p>
+<p>Rejeitar a hipótese <span class="math inline">\(H_{0}\)</span> significa que as co-variáveis são significativas para explicar linearmente a variável resposta.</p>
+</section>
+<section id="análise-de-variância-multivariada" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="análise-de-variância-multivariada"><span class="header-section-number">3.5</span> Análise de Variância Multivariada</h2>
+<section id="anova-análise-de-variância" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="anova-análise-de-variância"><span class="header-section-number">3.5.1</span> (ANOVA) Análise de variância</h3>
+<p>Assim como o teste t, essa técnica estatística compara a média de grupos, entretanto, enquanto o teste t focaliza em dois grupos, por outro lado, a ANOVA compara três ou mais grupos e, adicionalmente, assume que as variâncias são iguais em todos os grupos (homocedasticidade).</p>
+<p>A fim de testar a igualdade das médias, utiliza-se a seguinte estatística de teste:</p>
+<p><span class="math display">\[F = \frac{S^2_{entre}}{S^2_{dentro}}\]</span></p>
+<p>Onde o numerador é a variância entre os grupos e o denominador a variância dentro dos grupos para <span class="math inline">\(k-1\)</span> e <span class="math inline">\(n - k\)</span> graus de liberdade, respectivamente, em que <span class="math inline">\(k\)</span> é o número de grupos e <span class="math inline">\(n\)</span> o número de observações.</p>
+</section>
+<section id="manova" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="manova"><span class="header-section-number">3.5.2</span> MANOVA</h3>
+<p>A análise de variância multivariada (MANOVA) é uma forma generalizada da análise de variância (ANOVA). É utilizada em casos onde existem duas ou mais variáveis dependentes. A ferramenta MANOVA permite comparar se há diferença entre os tratamentos para as variáveis respostas. É utilizada a estatística Wilks para testar a igualdade entre os tratamentos, as hipóteses do teste são</p>
+<p><span class="math display">\[\begin{cases}
+  H_0: \mu_{1}=\mu_{2}=\ldots=\mu_{k};    \\
+  H_1: \text{pelo menos duas são diferentes.}
+\end{cases}
+\]</span></p>
+<p>em que $ _{i} $ , <span class="math inline">\(i = 1,2,\ldots,k\)</span> são as médias dos tratamentos. A estatística <span class="math inline">\(\Lambda^{*}\)</span> foi originalmente proposta por Wilks e corresponde a uma forma equivalente do teste F da hipótese de ausência de efeito de tratamento do caso uni-variado. Que é dada por:</p>
+<p><span class="math display">\[ \Lambda^{*} = \dfrac{|E|}{|H|+|E|}\]</span></p>
+<p>Onde, o determinante da soma do quadrado dos erros e dos produtos cruzados, a matriz W é dividida pelo determinante da soma total de quadrados e matriz de produtos cruzados T = H + E. Se H é grande em relação a E, então | H + E | será grande em relação a | E |. Assim, vamos rejeitar a hipótese nula quanto menor for a estatística de Wilks (perto de zero).</p>
+</section>
+</section>
+<section id="regressão-linear-múltipla" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="regressão-linear-múltipla"><span class="header-section-number">3.6</span> Regressão Linear Múltipla</h2>
+<p>Podemos definir um modelo de regressão linear múltipla da seguinte maneira: [ <span class="math display">\[\begin{eqnarray*}
+Y= \beta_0 + \boldsymbol{\beta}_j\boldsymbol{X}_j+\boldsymbol{\varepsilon}_i,\ i=1,...,n,
+\end{eqnarray*}\]</span> ]</p>
+<p>em que <span class="math inline">\(j=1,...,p\)</span> e <span class="math inline">\(p\)</span> é o número de parâmetros do modelo.</p>
+<ul>
+<li><span class="math inline">\(Y\)</span> é um vetor <span class="math inline">\(n\times 1\)</span> correspondente a variável resposta do estudo;</li>
+<li><span class="math inline">\(\beta_0\)</span> e <span class="math inline">\(\boldsymbol{\beta}\)</span> correspondem aos parâmetros do modelo, e <span class="math inline">\(\boldsymbol{\beta}\)</span> é um vetor <span class="math inline">\(p\times 1\)</span>;</li>
+<li><span class="math inline">\(\boldsymbol{X}\)</span> é a matriz de planejamento <span class="math inline">\(n\times p\)</span> correspondente às variáveis independentes do modelo;</li>
+<li><span class="math inline">\(\boldsymbol{\varepsilon}_i\)</span> corresponde ao erro experimental, do qual não podemos controlar. Também é conhecido como resíduo.</li>
+</ul>
+<p>É importante ressaltar que neste relatório iremos expressar qualquer matriz ou vetor por letras em negrito. Além disso, para o uso desses modelos é preciso que algumas suposições sejam aceitas, tais como:</p>
+<ul>
+<li>Os erros (ou resíduos) devem seguir uma distribuição Normal e serem independentes;</li>
+<li>Os erros devem possuir médias iguais a zero e serem homocedásticos (variâncias constantes para cada indivíduo).</li>
+</ul>
 
 
 </section>
@@ -450,10 +531,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./05-nao_parametrica.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Estatística Não-Paramétrica</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02-descritiva.html" class="pagination-link">
-        <span class="nav-page-text">Análise Descritiva</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./07-multivariada.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multivariada</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

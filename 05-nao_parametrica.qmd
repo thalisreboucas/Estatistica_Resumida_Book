@@ -1,0 +1,87 @@
+# Estatística Não-Paramétrica
+
+## Teste de Wilcoxon-Mann-Whitney
+### Definição 1 
+Proposto inicialmente por Frank Wilcoxon (1945) e com contribuições de Henry B. Mann e Donald R. Whitney (1947), o teste de Wilcoxon-Mann-Whitney é um teste não paramétrico aplicado em duas amostras independentes.
+
+Esse teste é baseado nos postos dos valores obtidos combinando-se as duas amostras. Isso é feito ordenando-se esses valores, do menor para o maior, independentemente do fato de qual população cada valor provém, caso haja observações repetidas atribui-se a média dos postos correspondentes. O teste de Wilcoxon-Mann-Whitney tem como objetivo testar se as distribuições possuem a mesma medida de tendência central.
+
+Seja $X_1$, $X_2$, ..., $X_m$ uma amostra aleatória de $X$ de modo que $X_j$'s são independentes e identicamente distribuídos e $Y_1$, $Y_2$, ..., $Y_n$ uma amostra aleatória de $Y$ de modo que os $Y_i$'s são independentes e identicamente distribuídos. Além disso, suponha que os $X_j$'s e os $Y_i$'s são mutuamente independentes e a amostra $Y$ aquela com o menor tamanho amostral, isto é, $n \leq m$.
+
+As possíveis hipóteses do teste são:
+
+ - $H_0$: $\Delta=0$ vs $H_1$: $\Delta\neq0$;
+ - $H_0$: $\Delta=0$ vs $H_1$: $\Delta>0$;
+ - $H_0$: $\Delta=0$ vs $H_1$: $\Delta<0$. 
+
+em que:
+
+ - $\Delta$ = Estimador da diferença das posições.
+
+Para estimar a diferença $\Delta$ entre as medianas das populações, consideramos todas as $m \times n$ diferenças $y_i - x_j$ ordenadas de forma crescente.
+
+O estimador $\hat{\Delta}$ associado a estatística de Wilcoxon-Mann-Whitney é definido por
+$\hat{\Delta}= \ \hbox{mediana}\{(y_i-x_j), \ i=1,\ldots, n; j=1,\ldots,m\}$, chamado de pseudo-mediana.
+
+A estatística de teste, denotada por $W$, é dada pelo mínimo de $U_m$ e $U_n$
+\[
+\begin{align*}
+    U_m &= S_m - \frac{m(m+1)}{2} \\
+    U_n &= S_n - \frac{n(n+1)}{2}
+\end{align*}
+\]
+
+em que:
+
+- $S_m$ = Soma dos postos relacionados a amostra $X$;
+- $S_n$ = Soma dos postos relacionados a amostra $Y$.
+
+
+### Definição 2 :
+
+O teste de Wilcoxon-Mann-whitney é um teste **não-paramétrico**, ou seja, é um teste usado quando temos poucas ( ou nenhuma) evidências sobre a real distribuição dos dados. Ele se utiliza de passos idênticos aos que usamos para calcular um teste de hipóteses usual.
+
+Seja $P_1$ e $P_2$ duas população das quais não temos informações sobre suas distribuições, porém, temos que seus dados são qualitativo ordinais ou quantitativos. Retira-se uma amostra de cada uma dessas populações, sendo essas independentes. O procedimento utilizado nesse teste consiste em ordenarmos essas duas amostras de forma combinada, ou seja, ordena-se esses valores sem a necessidade de levar em consideração de qual população o dado provém. Com isso, testaremos se as duas populações têm a mesma mediana, ou seja, se suas distribuições são iguais em localização.
+
+Sendo $X_1,X_2,...,X_m$ e $Y_1,Y_2,...,Y_n$, amostras aleatórias independentes e identicamente distribuídas(i.i.d) das populações $P_1$ e $P_2$, respectivamente. Além disso, essas amostras também serão independentes entre si, sendo essas tomadas de forma que $n\leq m$.
+
+Sendo F e G as funções de distribuição correspondentes as populações $P_1$ e $P_2$, respectivamente, a hipótese nula é tal como segue:
+\[
+    H_0: F(t) = G(t),\text{para todo t} 
+\]
+
+Entretanto, podemos também considerar que Y tem a mesma distribuição de X+$\Delta$. Perante isso, a hipótese nula será:
+
+\[
+    H_0: \Delta  = 0 
+\]
+
+Daí, como estamos interessados apenas em haver diferença entre as medianas, independentemente se essa diferença é negativa ou positiva, utilizamos como hipótese alternativa, uma hipótese bilateral, como vemos abaixo:
+
+\[
+    H_1: \Delta \neq 0
+\]
+
+Com os dados já ordenados em ordem crescente, calculamos $S_m$ e $S_n$, que serão as somas dos postos de X e Y , respectivamente. Após isso, obteremos:
+
+\[
+     U_m = S_m - \dfrac{1}{2}m(m+1) \; \text{e} \; 
+   $U_n = S_n - \dfrac{1}{2}n(n+1) 
+\]
+
+Após isso, calcula-se a estatistica de teste W, que será o menor valor entre $U_m$ e $U_n$.
+
+Sob $H_0$, espera-se que tenhamos uma distribuição de postos aproximadamente igual, daí, o posto médio das duas amostras deve ser parecido.
+
+Daí,deve-se encontrar os valores críticos $t_1$ e $t_2$, de forma que 
+
+\[
+    P[W<t_1] = P[W>t_2] \approx \dfrac{\alpha}{2}
+\]
+
+Rejeita-se $H_0$ caso $W_{obs}<t_1$ ou $W_{obs}>t_2$
+
+Seu valor-p será dado por:
+\[
+    2P(W>W_{obs}-1,\text{ se $W_{obs}>\dfrac{mn}{2}$ ou  $2P(W<W_{obs})$, se $W_{obs}\leq\dfrac{mn}{2}$ }
+\]

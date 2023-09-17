@@ -1,0 +1,43 @@
+# Referências
+>
+>   Agresti, A. (2002). Categorical data analysis. Second edition. New York: Wiley. Pages 91–101
+> 
+>   Agresti, A. (2007). An Introduction to Categorical Data Analysis, 2nd ed. New York: John Wiley \& Sons. Page 38
+>   
+>   Agresti, A. (2007). An Introduction to Categorical Data Analysis, 2nd ed. New York: John Wiley \& Sons. Page 29
+>  
+>  Bonferroni, C. E., Teoria statistica delle classi e calcolo delle probabilità, Pubblicazioni del R Istituto Superiore di Scienze Economiche e Commerciali di Firenze 193
+>
+>  Bussab,W. O.; Morettin,  P. A.**Estatística Básica** - 7 Edição, Atual Editora, 1987.
+> 
+>  R Core Team (2020). R: A language and environment for statistical
+   computing. R Foundation for Statistical Computing, Vienna, Austria.
+  URL https://www.R-project.org/.
+>  
+>   Lance, C.E., & Vandenberg, R.J. (Eds.). (2014). More Statistical and Methodological Myths and Urban Legends: Doctrine, Verity and Fable in Organizational and Social Sciences (1st ed.). Routledge.    https://doi.org/10.4324/9780203775851
+>
+>**Associação entre variáveis**.Disponível em: 
+  http://sweet.ua.pt/andreia.hall/TEA/Capcorrel.pdf. Acesso:10 de janeiro 2018.
+>
+> Bussab,W. O.; Morettin,  P. A.**Estatística Básica** - 7 Edição, Atual Editora, 1987.
+>
+>  Bolfarine, H.;Sandoval, M. C.  **Introdução à Inferência Estatística**} - 2 Edição, Editora SBM, 2010.
+>
+>  **Teste de hipótese**. Disponível             em:http://www.ufscar.br/jcfogo/Estat_2/arquivos/Teste_Hipotese.pdf. Acesso:12 de janeiro 2018. 
+>
+>  Viali,L.**Apostila Testes Hipóteses Não Paramétricos**.Porto Alegre, 2008.
+>
+>  HANIFAN, Lyda J. The rural school community center. **The Annals of the American Academy of Political and Social Science**, v. 67, n. 1, p. 130-138, 1916.
+>
+>  JOHNSON, R A. WICHERN, D. W. **Applied Multivariate Statistical Analysis**. Vol
+5. No. 8. Upper Saddle River, NJ: Prentice hall, 2002.
+>
+>   DE PÁDUA BRAGA, Antônio; DE LEON FERREIRA, André Carlos Ponce; LUDERMIR, Teresa Bernarda. Redes neurais artificiais: teoria e aplicações. Rio de Janeiro, Brazil:: LTC Editora, 2007.
+>
+>   HAYKIN, Simon. Redes neurais: princípios e prática. Bookman Editora, 2007..
+>
+>  MORETTIN, Pedro Alberto; BUSSAB, WILTON OLIVEIRA. Estatística básica. Editora Saraiva, 2017.
+>
+>  PAULA, Gilberto Alvarenga. Modelos de regressão: com apoio computacional. São Paulo: IME-USP, 2004.
+>
+>  Scikit-Learn, Multilayer Perceptron. Disponível em:https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html. 

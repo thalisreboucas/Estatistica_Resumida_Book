@@ -17,11 +17,16 @@ book:
   repo-branch: main
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - 02-descritiva.qmd
+    - 03-correlacao.qmd
+    - 04-inferencia.qmd
+    - 05-nao_parametrica.qmd
+    - 06-regressao.qmd
+    - 07-multivariada.qmd
+    - 08-amostragem.qmd
+    - 09-graficos.qmd
+    - 10-referencia.qmd
 
-bibliography: references.bib
 
 format:
   html:
@@ -30,4 +35,3 @@ format:
     documentclass: scrreprt
 
 editor: visual
-

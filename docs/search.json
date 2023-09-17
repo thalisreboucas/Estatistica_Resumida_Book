@@ -54,5 +54,103 @@
     "title": "Summary",
     "section": "",
     "text": "Summary\nIn summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "09-graficos.html#barras",
+    "href": "09-graficos.html#barras",
+    "title": "6  Gráficos",
+    "section": "6.1 Barras",
+    "text": "6.1 Barras\nEste é um gráfico que utiliza barras retangulares e o seu comprimento representa os dados proporcionalmente a escala do eixo que estão os dados. Estas Barras podem estar na vertical ou na Horizontal.Além disso, é um gráfico muito utilizado para representar valores discretos.Neles conseguimos compreender a quantidade de cada item pelo tamanho da barra retangular.\n\nHistograma é um gráfico de barras que demonstra a distribuição de dados e frequências. A base de cada uma de suas barras representa uma classe e a altura a frequência em que a classe ocorre."
+  },
+  {
+    "objectID": "09-graficos.html#circular-pizza",
+    "href": "09-graficos.html#circular-pizza",
+    "title": "6  Gráficos",
+    "section": "6.2 Circular (Pizza)",
+    "text": "6.2 Circular (Pizza)\nEste é um gráfico que cada fatia representa uma categoria de dados que compõe o todo. Juntas, as fatias representam 100%. O tamanho de cada fatia é relativo à sua porção do todo. Se há muitas categorias de dados apresentadas, a leitura do gráfico de pizza pode ficar bem prejudicada. O intuito do gráfico de pizza é que todas as informações fiquem claras à primeira vista.\nUm gráfico de rosca é um tipo de gráfico de pizza, mas em vez de apresentar os dados em um formato de círculo sólido, apresenta as informações em um formato de rosca. Eles têm basicamente a mesma função e podem ser usados alternadamente, de acordo do aspecto visual que você estiver buscando."
+  },
+  {
+    "objectID": "09-graficos.html#boxplot",
+    "href": "09-graficos.html#boxplot",
+    "title": "6  Gráficos",
+    "section": "6.3 Boxplot",
+    "text": "6.3 Boxplot\nEste é um gráfico que utiliza um diagrama de caixa é uma ferramenta gráfica que permite visualizar a distribuição e valores discrepantes (outliers) dos dados.Além disso, o boxplot também é uma disposição gráfica comparativa.As medidas de estatísticas descritivas como o mínimo, máximo, primeiro quartil, segundo quartil ou mediana e o terceiro quartil formam o boxplot.\n\n6.3.1 Boxplot + Violino\nO “violino” são as curvas no entorno do gráfico boxplot, e representa a função densidade de probabilidade estimada via kernel (basicamente, as curvas mais largas representam maior densidade de pontos, ou seja, existe uma maior frequência de pontos). Esse tipo de representação pode ser útil para alguns conjuntos de dados, pois pelo fato do boxplot resumir os dados em 5 medidas descritivas, pode haver perda de informação. Já o “violino” resume os dados em uma função densidade, caracterizando melhor o conjunto de dados."
+  },
+  {
+    "objectID": "09-graficos.html#linhas",
+    "href": "09-graficos.html#linhas",
+    "title": "6  Gráficos",
+    "section": "6.4 Linhas",
+    "text": "6.4 Linhas\nEste é um gráfico de linhas continuas para a visualização de dados em linhas do tempo, serve para ver a tendencia e a sazonalidade do que esta ocorrendo com os dados,geralmente o eixo Y são onde fica os dias,meses ou anos e o eixo X é onde fica uma escala discreta ou continua em relação ao tipo de dado."
+  },
+  {
+    "objectID": "10-referencia.html",
+    "href": "10-referencia.html",
+    "title": "7  Referências",
+    "section": "",
+    "text": "Agresti, A. (2002). Categorical data analysis. Second edition. New York: Wiley. Pages 91–101\nAgresti, A. (2007). An Introduction to Categorical Data Analysis, 2nd ed. New York: John Wiley & Sons. Page 38\nAgresti, A. (2007). An Introduction to Categorical Data Analysis, 2nd ed. New York: John Wiley & Sons. Page 29\nBonferroni, C. E., Teoria statistica delle classi e calcolo delle probabilità, Pubblicazioni del R Istituto Superiore di Scienze Economiche e Commerciali di Firenze 193\nBussab,W. O.; Morettin, P. A.Estatística Básica - 7 Edição, Atual Editora, 1987.\nR Core Team (2020). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.\nLance, C.E., & Vandenberg, R.J. (Eds.). (2014). More Statistical and Methodological Myths and Urban Legends: Doctrine, Verity and Fable in Organizational and Social Sciences (1st ed.). Routledge. https://doi.org/10.4324/9780203775851\nAssociação entre variáveis.Disponível em: http://sweet.ua.pt/andreia.hall/TEA/Capcorrel.pdf. Acesso:10 de janeiro 2018.\nBussab,W. O.; Morettin, P. A.Estatística Básica - 7 Edição, Atual Editora, 1987.\nBolfarine, H.;Sandoval, M. C. Introdução à Inferência Estatística} - 2 Edição, Editora SBM, 2010.\nTeste de hipótese. Disponível em:http://www.ufscar.br/jcfogo/Estat_2/arquivos/Teste_Hipotese.pdf. Acesso:12 de janeiro 2018.\nViali,L.Apostila Testes Hipóteses Não Paramétricos.Porto Alegre, 2008.\nHANIFAN, Lyda J. The rural school community center. The Annals of the American Academy of Political and Social Science, v. 67, n. 1, p. 130-138, 1916.\nJOHNSON, R A. WICHERN, D. W. Applied Multivariate Statistical Analysis. Vol 5. No. 8. Upper Saddle River, NJ: Prentice hall, 2002.\nDE PÁDUA BRAGA, Antônio; DE LEON FERREIRA, André Carlos Ponce; LUDERMIR, Teresa Bernarda. Redes neurais artificiais: teoria e aplicações. Rio de Janeiro, Brazil:: LTC Editora, 2007.\nHAYKIN, Simon. Redes neurais: princípios e prática. Bookman Editora, 2007..\nMORETTIN, Pedro Alberto; BUSSAB, WILTON OLIVEIRA. Estatística básica. Editora Saraiva, 2017.\nPAULA, Gilberto Alvarenga. Modelos de regressão: com apoio computacional. São Paulo: IME-USP, 2004.\nScikit-Learn, Multilayer Perceptron. Disponível em:https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html."
+  },
+  {
+    "objectID": "02-descritiva.html#medidas-de-posição",
+    "href": "02-descritiva.html#medidas-de-posição",
+    "title": "Análise Descritiva",
+    "section": "Medidas de Posição",
+    "text": "Medidas de Posição\n\nMédia\nEm um conjuto de dados temos um número \\(n\\) de valores e a soma total desse conjuto de dados e a sua divisão pelo o valor de \\(n\\) nos dá a média, porém a média é influênciada por valores que fogem do padrão da amostra sendo o valor grande demais ou muito pequeno ,lembrando que a média pode ou não representar \\(50\\%\\) dos dados.\nSeja \\({\\displaystyle n}\\) o número total de valores e \\({\\displaystyle x_{i}}\\) cada valor, em que \\({\\displaystyle i=1,\\dots ,n}\\). Média aritmética é a soma dos valores \\({\\displaystyle x_{i}}\\) dividido pelo número total de valores \\({\\displaystyle n}\\):\nFormula : [{x} = = _{i-1}^{n}x_i ]\n\n\nMediana\nO termo “mediana” refere-se a “meio”. Dado um conjunto de informações numéricas, o valor central corresponde à mediana desse conjunto. Dessa forma, é importante que esses valores sejam colocados em ordem, seja crescente ou decrescente. Se houver uma quantidade ímpar de valores numéricos, a mediana será o valor central do conjunto numérico. Se a quantidade de valores for um número par, devemos fazer uma média aritmética dos dois números centrais, e esse resultado será o valor da mediana.\n\n\nModa\nA moda é a realização mais frequente em um conjunto de valores. O fenômeno acontece quando, em um banco de dados, há a repetição das informações encontradas em uma mesma variável.\nUma empresa de Tecnologia da Informação tem 20 funcionários contratados. A maioria deles (15) tem idade entre 20 e 25 anos. O restante (5) está na faixa de 30 e 40 anos. A maior recorrência de idade, no entanto, é de funcionários com 23 anos. São 5 no total — definindo a medida de posição ora apresentada.\nA moda pode ser definida em bimodal (quando ocorre a repetição de dois valores) ou multimodal (mais de dois valores repetidos). O caso dos cinco funcionários com 23 anos identificamos como multimodal.\n\n\nQuartil\nTemos que os Quartis são valores de divisão na qual divide os conjuntado de dados em 4 partes, na qual temos:\n\nPrimeiro Quartil divide em \\(25\\%\\) em uma amostra ordena os valores inferiores.\nSegundo Quartil ou Mediana divide em \\(50\\%\\) em uma amostra ordena os valores inferiores.\nTerceiro Quartil divide em \\(75\\%\\) em uma amostra ordena os valores superiores.\n\nSão utilizados para entender como se comporta os dados em cada quartil correspondente até aquele ponto.\nIntervalo interquartil(IIQ) avalia a dispersão de dados somente depois de ordená-los em ordem crescente. O intervalo interquartil é calculado com base no cálculo de quartis, sendo o primeiro quartil (inferior), o quartil intermediário (mediana), o terceiro quartil (superior), que estão ligados ao conceito de quantil. A diferença entre o quartil superior e o quartil inferior determina o intervalo interquartil"
+  },
+  {
+    "objectID": "02-descritiva.html#medidas-de-dispersão",
+    "href": "02-descritiva.html#medidas-de-dispersão",
+    "title": "Análise Descritiva",
+    "section": "Medidas de Dispersão",
+    "text": "Medidas de Dispersão\n\nAmplitude\n\n\nVariância\nA variância é determinada pela média dos quadrados das diferenças entre cada uma das observações e a média aritmética da amostra. O cálculo é feito com base na seguinte fórmula:\n\nVariancia Amostral\nVariância Populacional\n\n[ ^{2}={}_{{i=1}}{N}(x_{i}-){2}, ]\nSendo,\n\n\\(\\sigma^2\\) : variância\n\\(x_i\\): valor observado\n\\(bar(x)\\) : média aritmética da amostra\nn: número de dados observados\n\n\n\nDesvio Padrão\n[ (S) = ]\n\n\nCoeficiente de Variação\n[cv = ]"
+  },
+  {
+    "objectID": "02-descritiva.html#tabela-de-contingência",
+    "href": "02-descritiva.html#tabela-de-contingência",
+    "title": "Análise Descritiva",
+    "section": "Tabela de contingência",
+    "text": "Tabela de contingência\nAs tabelas de contingência são usadas para registrar observações independentes de duas ou mais variáveis aleatórias, normalmente qualitativas.\nSuponha que tenhamos duas variáveis de uma população, A e B, e queremos relacioná-la com outras duas variáveis C e D . Retirando-se uma amostra aleatória dessa população, uma tabela de contingência conteria as frequências em cada classe, a tabela seria da seguinte forma:\n\n\n\n\nVariáveis\n\n\n\n\n\nVariáveis\nC\nD\n\n\nA\n5\n3\n\n\nB\n3\n49\n\n\nTotal\n8\n52\n\n\n\nEm posse da tabela de contingência podemos então realizar testes para saber se há ou não independência entre variáveis.\n\nTeste de McNemar\nO teste de McNemar é utilizado em tabelas de contingência, essencialmente em tabelas \\((2\\times2)\\), com dados pareados para comparar frequências marginais, que em ’outras palavras significa que o teste compara se houve mudança nas proporções no objeto de estudo antes e depois de uma intervenção.\nAs hipóteses do teste são:\n[ \\left{\n\\[\\begin{array}{l}\nH_0: \\text{As variáveis linha e coluna possuem as mesmas proporções},\\\\\nH_1:  \\text{As variáveis linha e coluna possuem proporções diferentes}. \\\\\n\\end{array}\\]\n. ]\nA estatística do teste, \\(Q\\), é dada por: \\[ Q=\\cfrac{(a-d)^2}{(a+d)} \\] em que \\(Q \\sim \\chi^2(1)\\), lê-se \\(Q\\) segue uma distribuição qui-quadrado com 1 grau de liberdade."
+  },
+  {
+    "objectID": "02-descritiva.html#tabela-de-classes",
+    "href": "02-descritiva.html#tabela-de-classes",
+    "title": "Análise Descritiva",
+    "section": "Tabela de classes",
+    "text": "Tabela de classes\nA tabela de classes é usada quando temos dados brutos provenientes de uma variável contínua, e então nós as agrupamos para a construção de uma tabela, em intervalos que também são conhecidos por classes.\nSuponhamos que desejamos construir K classes. O valor mínimo da nossa amostra(mín) e o máximo(máx). A partir dessas informações, calculamos a amplitude total(AT):\n[ \n] Como o número de classes (k) é dada por: [ k = 1+3,3\\(\\log(n)\\). ]\nA amplitude de cada classe (h) é dada por:\n[ h = . ]"
+  },
+  {
+    "objectID": "03-correlacao.html#coeficiente-de-cramér",
+    "href": "03-correlacao.html#coeficiente-de-cramér",
+    "title": "Análise de Correlação",
+    "section": "Coeficiente de Cramér",
+    "text": "Coeficiente de Cramér\nO coeficiente de Cramér é uma medida entre duas variáveis medidas numa escala categórica. Portanto pode ser aplicado em situações onde a informação se encontra distribuída por categorias nominais não ordenáveis.\nEste coeficiente obtém-se diretamente a partir da estatística \\(\\chi_v^2\\) através da expressão\n\\[\nC = \\sqrt{\\dfrac{\\chi_v^2}{n(l-1)}}\n\\] onde n representa o número total de observações e l representa o mínimo entre o número de linhas e colunas na tabela de contingência.\nA partir do valor do coeficiente de Cramér é possível efetuar um teste às hipóteses [\n\\[\\begin{cases}\nH_0:\\text{  As variáveis são independentes;} \\\\\nH_1:\\text{  As variáveis não são independentes.}\n\\end{cases}\\]\n]"
+  },
+  {
+    "objectID": "03-correlacao.html#coeficiente-de-correlação-ponto-biserial",
+    "href": "03-correlacao.html#coeficiente-de-correlação-ponto-biserial",
+    "title": "Análise de Correlação",
+    "section": "Coeficiente de Correlação Ponto Biserial",
+    "text": "Coeficiente de Correlação Ponto Biserial\nEsse coeficiente (\\(r_{pb}\\)) mede a correlação entre uma variável quantitativa e uma variável categórica binária (0,1). Ele pode variar entre -1 e 1 e é definido pela seguinte fórmula:\n[ r_{pb} = ]\n\n\\(M_1\\) = média do grupo que recebeu o valor 1 da variável binária.\n\\(M_0\\) = média do grupo que recebeu o valor 0 da variável binária.\n\\(S_n\\) = desvio padrão da variável binária toda.\n\\(p\\) = proporção de casos do grupo “0” na variável binária.\n\\(q\\) = proporção de casos do grupo “1” na variável binária."
+  },
+  {
+    "objectID": "03-correlacao.html#correlação-linear-de-pearson",
+    "href": "03-correlacao.html#correlação-linear-de-pearson",
+    "title": "Análise de Correlação",
+    "section": "Correlação linear de Pearson",
+    "text": "Correlação linear de Pearson\nDe modo geral, a quantificação do grau de associação entre duas variáveis é feita pelos chamados coeficientes de associação ou correlação. Essas são medidas que descrevem numericamente a associação (ou dependência) entre duas variáveis. Ou seja, tais resultados nos permitem verificar se uma variável influencia de forma positiva ou negativa na outra.\nPara facilitar a compreensão, esses coeficientes usualmente variam entre -1 e +1, e quanto mais próximo de 0, menos relação as variáveis possuem. A intensidade da associação linear existente entre as variáveis quantitativas pode ser determinada através do chamado Coeficiente de Correlação Linear de Pearson, e sua fórmula é definida por:\n\\[\\rho_{(x,y)} = \\frac{cov{(x,y)}}{S_{x}S_{y}},\\] em que ,\n\n\\(\\text{Cov}{(x,y)}\\) - Covariância ou variância conjunta das variáveis X e Y;\n\\(S_{x}\\)- Desvio Padrão da variável X\n\\(S_{Y}\\) - Desvio Padrão da variável Y.\nComo dito anteriormente, o \\(\\rho\\) pode assumir valores entre -1 e +1 e neste ponto cabe algumas observações, tais como\n\\(\\rho_{(x,y)}\\) = +1 significa uma correlação positiva perfeita entre as duas variáveis, ou seja, se uma aumenta a outra também aumenta;\n\\(\\rho_{(x,y)}\\) = -1 significa uma correlação negativa perfeita entre as duas variáveis, isto é, se uma aumenta a outra diminui;\n\\(\\rho_{(x,y)}\\) = 0 significa que as duas variáveis não dependem linearmente uma da outra. No entanto, pode existir uma outra dependência “não-linear”. Logo, o resultado deve ser investigado por outros meios."
+  },
+  {
+    "objectID": "03-correlacao.html#coeficiente-de-correlação-de-spearman",
+    "href": "03-correlacao.html#coeficiente-de-correlação-de-spearman",
+    "title": "Análise de Correlação",
+    "section": "Coeficiente de correlação de Spearman",
+    "text": "Coeficiente de correlação de Spearman\nO coeficiente de Correlação de Spearman é geralmente utilizado quando temos duas variáveis ordinais ou quando não podemos utilizar o teste Cramér V, pois não podemos facilmente atestar suas suposições. Diante de duas variáveis medidas numa escala de ordenação clara, ou que apresentam uma relação não linear mas monótona (se uma aumenta a outra tem sempre tendência a aumentar (ou a diminuir)).\nÉ um método não-paramétrico que usa os postos das variáveis quando o coeficiente de correlação de Pearson não pode ser aplicado, temos como alternativa o coeficiente de correlação de Spearman. A ideia de construção deste coeficiente é bastante simples.\nDadas duas amostras de observação ordenáveis, substitui-se cada um dos seus valores pela sua ordem de ordenação, em inglês\nPor exemplo, se uma amostra de três valores for \\(x_{1} = 2.1\\), \\(x_{2} = 1.7\\), \\(x_{3} = 4.8\\), então os respectivos ranks serão \\(r_{1}= 2\\), \\(r_{2} = 1\\), \\(r_{3} = 3\\). Após substituir cada uma das amostras pelos seus ranks o coeficiente de Spearman não e mais do que o coeficiente de Pearson aplicado agora aos . Uma vez que as ordens variam sempre entre 1 e \\(n\\) (número de observações), pode-se escrever o coeficiente do seguinte modo \\[  R_{s}=1- \\dfrac{ 6\\sum_{i=1}^{n} D_{i}^2}{n^{3} - n}, \\] onde \\(D_{i}\\) representa a diferença de ranks entre as observações que estão sendo analisadas."
+  },
+  {
+    "objectID": "03-correlacao.html#coeficiente-tau-de-kendall",
+    "href": "03-correlacao.html#coeficiente-tau-de-kendall",
+    "title": "Análise de Correlação",
+    "section": "Coeficiente \\(\\tau\\) de Kendall",
+    "text": "Coeficiente \\(\\tau\\) de Kendall\nUma alternativa ao coeficiente de Spearman é o coeficiente de correlação \\(\\tau\\) de Kendall que se aplica nas mesmas condições, porém com duas vantagens : se as amostras tiverem dimensão muito reduzida e valores repetidos, os resultados do teste são mais precisos; por outro lado, o coeficiente \\(\\tau\\) de Kendall pode ser generalizado para correlações parciais que são correlações medidas entre duas variáveis após remoção do efeito de uma possível terceira variável sobre ambas.\nO coeficiente de Kendall é descrito como uma medida de concordância entre dois conjuntos, medindo a diferença entre a probabilidade de as classificações estarem na mesma ordem e a probabilidade de estarem em ordens diferentes.\n\\[ \\tau = \\dfrac{ concordantes - discordantes}{\\frac{n(n-1)}{2}}.   \\]"
   }
 ]

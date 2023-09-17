@@ -1,0 +1,92 @@
+# Gráficos
+
+```{r include=FALSE}
+library(ggplot2)
+library(plotly)
+```
+
+## Barras
+
+Este é um gráfico que utiliza barras retangulares e o seu comprimento representa os dados proporcionalmente a escala do eixo que estão os dados. Estas Barras podem estar na vertical ou na Horizontal.Além disso, é um gráfico muito utilizado para representar valores discretos.Neles conseguimos compreender a quantidade de cada item pelo tamanho da barra retangular.
+
+-   Histograma é um gráfico de barras que demonstra a distribuição de dados e frequências. A base de cada uma de suas barras representa uma classe e a altura a frequência em que a classe ocorre.
+
+```{r echo=FALSE}
+
+fig <- plot_ly(
+  x = c("a", "b", "c"),
+  y = c(20, 15, 23),
+  name = "Barras",
+  type = "bar"
+)
+
+fig
+```
+
+## Circular (Pizza)
+
+Este é um gráfico que cada fatia representa uma categoria de dados que compõe o todo. Juntas, as fatias representam 100%. O tamanho de cada fatia é relativo à sua porção do todo. Se há muitas categorias de dados apresentadas, a leitura do gráfico de pizza pode ficar bem prejudicada. O intuito do gráfico de pizza é que todas as informações fiquem claras à primeira vista.
+
+Um gráfico de rosca é um tipo de gráfico de pizza, mas em vez de apresentar os dados em um formato de círculo sólido, apresenta as informações em um formato de rosca. Eles têm basicamente a mesma função e podem ser usados alternadamente, de acordo do aspecto visual que você estiver buscando.
+
+```{r echo=FALSE}
+labels = c('a','b','c','d')
+values = c(3500, 1500, 4053, 500)
+
+fig <- plot_ly(type='pie', labels=labels, values=values, 
+               textinfo='label+percent',
+               insidetextorientation='radial')
+fig
+```
+
+## Boxplot
+
+Este é um gráfico que utiliza um diagrama de caixa é uma ferramenta gráfica que permite visualizar a distribuição e valores discrepantes (outliers) dos dados.Além disso, o boxplot também é uma disposição gráfica comparativa.As medidas de estatísticas descritivas como o mínimo, máximo, primeiro quartil, segundo quartil ou mediana e o terceiro quartil formam o boxplot.
+
+### Boxplot + Violino
+
+O "violino" são as curvas no entorno do gráfico boxplot, e representa a função densidade de probabilidade estimada via kernel (basicamente, as curvas mais largas representam maior densidade de pontos, ou seja, existe uma maior frequência de pontos). Esse tipo de representação pode ser útil para alguns conjuntos de dados, pois pelo fato do boxplot resumir os dados em 5 medidas descritivas, pode haver perda de informação. Já o "violino" resume os dados em uma função densidade, caracterizando melhor o conjunto de dados.
+
+```{r echo=FALSE}
+df <- read.csv("https://raw.githubusercontent.com/plotly/datasets/master/violin_data.csv")
+
+fig <- df %>%
+  plot_ly(
+    y = ~total_bill,
+    type = 'violin',
+    box = list(
+      visible = T
+    ),
+    meanline = list(
+      visible = T
+    ),
+    x0 = 'a'
+  ) 
+
+fig <- fig %>%
+  layout(
+    yaxis = list(
+      title = "",
+      zeroline = F
+    )
+  )
+
+fig
+```
+
+## Linhas
+
+Este é um gráfico de linhas continuas para a visualização de dados em linhas do tempo, serve para ver a tendencia e a sazonalidade do que esta ocorrendo com os dados,geralmente o eixo Y são onde fica os dias,meses ou anos e o eixo X é onde fica uma escala discreta ou continua em relação ao tipo de dado.
+
+```{r echo=FALSE}
+
+
+x <- c(1:15)
+y <- c(10, 20,12 , 15, 10, 5, 15, 15, 20, 10, 10, 15, 25, 20, 10)
+
+data <- data.frame(x, y)
+
+fig <- plot_ly(data, x = ~x, y = ~y, name = "Gaps", type = 'scatter', mode = 'lines') 
+
+fig
+```

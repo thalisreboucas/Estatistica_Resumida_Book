@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Estatisca Resumida - 4&nbsp; Multivariada</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./08-amostragem.html" rel="next">
+<link href="./06-regressao.html" rel="prev">
+<link href="./cover.jpg" rel="icon" type="image/jpeg">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-multivariada.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multivariada</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Estatisca Resumida</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/thalisreboucas/Estatistica_Resumida_Book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bem vindos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-descritiva.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Análise Descritiva</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-correlacao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Análise de Correlação</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-inferencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Inferência</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-nao_parametrica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Estatística Não-Paramétrica</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-regressao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regressão</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-multivariada.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multivariada</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08-amostragem.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Amostragem</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./09-graficos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Gráficos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10-referencia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Referências</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#redes-neurais-artificiais" id="toc-redes-neurais-artificiais" class="nav-link active" data-scroll-target="#redes-neurais-artificiais"><span class="header-section-number">4.1</span> Redes Neurais Artificiais</a>
+  <ul class="collapse">
+  <li><a href="#modelo-mcp" id="toc-modelo-mcp" class="nav-link" data-scroll-target="#modelo-mcp"><span class="header-section-number">4.1.1</span> Modelo MCP</a></li>
+  <li><a href="#funções-de-ativação" id="toc-funções-de-ativação" class="nav-link" data-scroll-target="#funções-de-ativação"><span class="header-section-number">4.1.2</span> Funções de ativação</a></li>
+  <li><a href="#erro-e-atualização-dos-pesos-no-mcp" id="toc-erro-e-atualização-dos-pesos-no-mcp" class="nav-link" data-scroll-target="#erro-e-atualização-dos-pesos-no-mcp"><span class="header-section-number">4.1.3</span> Erro e Atualização dos pesos no MCP</a></li>
+  <li><a href="#multilayer-perceptron-mlp" id="toc-multilayer-perceptron-mlp" class="nav-link" data-scroll-target="#multilayer-perceptron-mlp"><span class="header-section-number">4.1.4</span> Multilayer Perceptron (MLP)</a></li>
+  <li><a href="#algoritmo-back-propagation" id="toc-algoritmo-back-propagation" class="nav-link" data-scroll-target="#algoritmo-back-propagation"><span class="header-section-number">4.1.5</span> Algoritmo back-propagation</a></li>
+  </ul></li>
+  <li><a href="#análise-de-componentes-principais" id="toc-análise-de-componentes-principais" class="nav-link" data-scroll-target="#análise-de-componentes-principais"><span class="header-section-number">4.2</span> Análise de Componentes Principais</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multivariada</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="redes-neurais-artificiais" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="redes-neurais-artificiais"><span class="header-section-number">4.1</span> Redes Neurais Artificiais</h2>
+<p>Redes neurais artificiais é um método baseado na estrutura de funcionamento dos neurônios do cérebro humano. A arquitetura do método é semelhante a todo o processo que ocorre com os neurônios, quanto a forma de aprendizado e repasse de informação entre neurônios através dos dendritos. A estrutura básica de um neurônio biológico é composto por três seções: o <em>corpo da célula</em>, os <em>dendritos</em> e o <em>axônio</em>. A figura 2.1 é uma ilustração da estrutura de um neurônio biológico</p>
+<p><img src="graficos/estrutura-neuronio.jpg" style="width:70.0%;height:12.0%" data-align="center"></p>
+<p>A partir de inúmeros estudos na área, um modelo em particular baseado em neurônio biológico foi proposto por Warren S. McCulloch e Walter Pitts no ano de 1943 em um artigo chamado: <em>“A logical calculus of the ideas immanent in nervous activit”</em>, que é uma simplificação do que se sabia até então sobre o neurônio biológico, este modelo foi chamado de MCP.</p>
+<section id="modelo-mcp" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="modelo-mcp"><span class="header-section-number">4.1.1</span> Modelo MCP</h3>
+<p>A representação matemática do modelo MCP contém <span class="math inline">\(n\)</span> terminais <span class="math inline">\(x_1, x_2, ..., x_n\)</span> (representando os dendritos) e um <span class="math inline">\(y\)</span> (axônio) representando o terminal de saída. Para simular o comportamento das sinapses, os terminais de entrada do neurônio tem pesos <span class="math inline">\(W_1, W_2, ..., W_n\)</span> associados cujo os valores podem ser positivos ou negativos.</p>
+<p>No modelo MCP a ativação de um neurônio é obtida através de uma função de ativação, que ativa ou não a saída, dependendo do valor da soma ponderada das suas entradas (Braga, 2007). O modelo terá a saída ativada quando</p>
+<p>[ <span class="math display">\[\begin{eqnarray}
+    \sum_{i=1}^{n}x_i W_i \geq \theta,
+\end{eqnarray}\]</span> ] em que <span class="math inline">\(n\)</span> é o número de entradas, <span class="math inline">\(W_i\)</span> é o peso associado a entrada <span class="math inline">\(x_i\)</span>, e <span class="math inline">\(\theta\)</span> (threshold) é o limiar do neurônio. A figura 2.2 ilustra o processo do modelo MCP de um neurônio artificial</p>
+<p><img src="graficos/Figura-2-Modelo-de-um-Neuronio-Artificial-HAYKIN-2001.png" style="width:70.0%;height:50.0%" data-align="center"></p>
+</section>
+<section id="funções-de-ativação" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="funções-de-ativação"><span class="header-section-number">4.1.2</span> Funções de ativação</h3>
+<p>Após McCulloch e Pitts terem proposto um modelo, derivou-se outros modelos que permitem a saída não apenas zero ou um, mas diferentes valores para y. Esse processamento se dá pelo que chamamos função de ativação (Braga, 2007). Será exemplificado três tipos de função de ativação :</p>
+<ol type="1">
+<li>Função Linear, definida como:</li>
+</ol>
+<p>[<br>
+<span class="math display">\[\begin{eqnarray}
+    \hat{y} = \alpha x,
+\end{eqnarray}\]</span> ]</p>
+<p>no qual <span class="math inline">\(\hat{y}\)</span> é a saída do modelo, <span class="math inline">\(x\)</span> os valores de entrada e <span class="math inline">\(\alpha\)</span> uma constante de linearidade. No qual o máximo que y pode assumir é <span class="math inline">\(\gamma\)</span> e mínimo -<span class="math inline">\(\gamma\)</span></p>
+<ol start="2" type="1">
+<li>Função Degrau, definida como</li>
+</ol>
+<p>[ =</p>
+<span class="math display">\[\begin{cases}
+  -\gamma \hbox{, se x $\leq$ - $\gamma$} \\
+                               \gamma,\hbox{ se x $\geq$  $\gamma$}  \end{cases}\]</span>
+<p>]</p>
+<ol start="3" type="1">
+<li>Função Logística, definida como</li>
+</ol>
+<p>[ <span class="math display">\[\begin{eqnarray}
+        \hat{y} = \frac{1}{1 + \epsilon^{x/T}},
+    \end{eqnarray}\]</span> ] onde <span class="math inline">\(T\)</span> determina a suavidade da curva, que será utilizada como função de ligação no modelo proposto.</p>
+</section>
+<section id="erro-e-atualização-dos-pesos-no-mcp" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="erro-e-atualização-dos-pesos-no-mcp"><span class="header-section-number">4.1.3</span> Erro e Atualização dos pesos no MCP</h3>
+<p>Quando se estima um parâmetro, é esperado que o mesmo apresente algum desvio em torno do valor real. Com o objetivo de minimizar a diferença entre eles, o algorítimo de aprendizado do perceptron dispõe de regras que permite a adaptação dos seus pesos de forma que a rede execute uma determinada tarefa de classificação.</p>
+<p>O algoritmo consiste em atualizar os pesos de modo que estejam mais próximos da solução desejada que os anteriores. A atualização do peso é dada por [ <span class="math display">\[\begin{eqnarray}
+    W(t+1) = W(t) + \Delta W,
+\end{eqnarray}\]</span> ]</p>
+<p>em que <span class="math inline">\(W(t)\)</span> é o peso no instante <span class="math inline">\(t\)</span> e <span class="math inline">\(\Delta W= \eta x\)</span> o incremento associado ao peso, sendo <span class="math inline">\(\eta\)</span> a taxa de aprendizado.</p>
+<p>Vamos denotar <span class="math inline">\(x\)</span> o vetor de entrada, <span class="math inline">\(y\)</span> o vetor da saída desejada, e {x,<span class="math inline">\(y\)</span>} o nodo arbitrário da rede. A atual saída da rede será chamada de <span class="math inline">\(\hat{y}\)</span>, ou seja, uma estimação do valores ideais, mas com um determinado erro <span class="math inline">\(\epsilon\)</span>. Dessa forma podemos denotar o erro como [ <span class="math display">\[\begin{eqnarray}
+    \epsilon = y - \hat{y}.
+\end{eqnarray}\]</span> ]</p>
+<p>Para o caso perceptron, <span class="math inline">\(y\)</span> <span class="math inline">\(\in\)</span> <span class="math inline">\(\{0,1\}\)</span> e <span class="math inline">\(\hat{y}\)</span> <span class="math inline">\(\in\)</span> {0,1}. Dessa forma existem quatro possíveis soluções para <span class="math inline">\(\epsilon\)</span>. Se <span class="math inline">\(\epsilon = 0\)</span> então encontramos valores estimados ideais. Caso contrario <span class="math inline">\(\epsilon\)</span> pode assumir valores <span class="math inline">\(\{-1,1\}\)</span>. Se <span class="math inline">\(\epsilon =-1\)</span> implica que <span class="math inline">\(y = 0\)</span> e $ = 1$, mas se <span class="math inline">\(\epsilon =1\)</span> então <span class="math inline">\(y = 1\)</span> e <span class="math inline">\(\hat{y} = 0\)</span>. Com o valor de <span class="math inline">\(\epsilon\)</span> podemos ter uma ideia quanto a direção com que os valores estimados estão distante dos valores ideias (Braga, 2007).</p>
+<p>Feito isso, sabemos que <span class="math inline">\(\Delta W\)</span>=<span class="math inline">\(\eta x\)</span> e <span class="math inline">\(w(t + 1) = w(t) + \epsilon \eta x\)</span>. Quando <span class="math inline">\(\epsilon = 1\)</span> a equação de atualização dos pesos possui a forma <span class="math inline">\(W(t+1)= w(t) + \eta x\)</span>. Mas para <span class="math inline">\(\epsilon = -1\)</span> temos a equação <span class="math inline">\(W(t+1)= w(t) - \eta x\)</span>.</p>
+</section>
+<section id="multilayer-perceptron-mlp" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="multilayer-perceptron-mlp"><span class="header-section-number">4.1.4</span> Multilayer Perceptron (MLP)</h3>
+<p>O MLP é uma rede neural semelhante ao perceptron, mas com duas ou mais camadas de neurônios, sendo essas camadas ligadas entre si por sinapses com pesos. O aprendizado deste tipo de rede é feito geralmente pelo algoritmo <em>back-propagation</em> (retro-propagação do erro), porém existem outros algoritmos para serem usados com a mesma finalidade. A figura 2.3 ilustra a estrutura do modelo MLP quanto as entradas (inputs), camadas e a resposta obtida</p>
+<p><img src="graficos/mlp2.png" style="width:70.0%;height:50.0%" data-align="center"></p>
+<p>De forma simplificada a estrutura matemática do modelo é semelhante a do modelo perceptron sendo apenas adicionadas mais camadas de neurônios. A ativação via função de ativação é geralmente feita com a função sigmoidal comumente chamada de função logística (Braga, 2007).</p>
+</section>
+<section id="algoritmo-back-propagation" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="algoritmo-back-propagation"><span class="header-section-number">4.1.5</span> Algoritmo back-propagation</h3>
+<p>O algoritmo <em>back-propagation</em> é um algoritmo supervisionado que utiliza pares como entrada e saída desejada para por meio de um mecanismo de correção de erros atualizar os pesos. O treinamento tem duas fases chamadas de <em>forward</em> e <em>backward</em>, sendo que o algoritmo percorre a rede em um sentido para cada fase. A fase <em>farward</em> define a saida de rede para uma dada entrada inserida no modelo e a fase <em>backward</em> utiliza a saida fornecida e a saida desejada para atualizar os pesos de sua conexões visando a diminuição do erro (Haykin, 2007). A figura 2.4 ilustra o processo do algoritmo</p>
+<p><img src="graficos/Three-layer-back-propagation-neural-network.png" style="width:70.0%;height:40.0%" data-align="center"></p>
+<p>O algoritmo <em>back-propagation</em> é baseado na regra delta, sendo chamado também de regra delta generalizada. Os ajustes dos pesos são feitos utilizando-se o método gradiente. A função de custo a ser minimizada é dada pela soma dos erros quadráticos [ <span class="math display">\[\begin{eqnarray}
+    E = \frac{1}{2}\sum_{p}\sum_{i=1}^{k}(y_{i}^{p}-\hat{y}_{i}^{p}),
+\end{eqnarray}\]</span> ]</p>
+<p>em que <span class="math inline">\(p\)</span> é o número de padrões, <span class="math inline">\(k\)</span> é o número de unidades de saída, <span class="math inline">\(y_{i}\)</span> é a i-ésima saída desejada e <span class="math inline">\(\hat{y}_{i}\)</span> é a i-ésima saída da rede.</p>
+</section>
+</section>
+<section id="análise-de-componentes-principais" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="análise-de-componentes-principais"><span class="header-section-number">4.2</span> Análise de Componentes Principais</h2>
+<p>A análise de componentes principais é uma técnica estatística multivariada que consiste na diminuição da quantidade de variáveis em componentes que a partir delas podemos explicar uma determinada proporção da variabilidade total dos dados utilizando apenas as componentes que são essencialmente em menor número que as variáveis.</p>
+<p>Seja <span class="math inline">\(a_{ik}\)</span> autovetor correspondente a i-ésima componente principal e a uma variável <span class="math inline">\(k\)</span>. Logo, a n-ésima componente principal para uma observação da amostra <span class="math inline">\(j\)</span>, denominada por <span class="math inline">\(c_{n}^{j}\)</span> definida por: <span class="math display">\[c_{n}^{j}=\sum_{l=1}^{k}a_{nl}x_{l}^{j},\]</span> onde, <span class="math inline">\(x_{l}^{j}\)</span> representa o valor da l-ésima variável para uma observação j da amostra.</p>
+<p>Para o estudo em questão, os bancos de dados observados foram os do ano de 2014 e 2006 fornecidos pela cliente. Podemos representar matricialmente cada um dos bancos de dados na seguinte forma:</p>
+<p>[ =</p>
+<span class="math display">\[\begin{bmatrix}
+    x_{11} &amp; x_{12} &amp; x_{13} &amp; \dots  &amp; x_{1n} \\
+    x_{21} &amp; x_{22} &amp; x_{23} &amp; \dots  &amp; x_{2n} \\
+    \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    x_{d1} &amp; x_{d2} &amp; x_{d3} &amp; \dots  &amp; x_{dn}
+\end{bmatrix}\]</span>
+<p>]</p>
+<p>onde, <span class="math inline">\(n\)</span> é o número de variáveis associadas ao estudo sendo as colunas do nosso banco de dados, e <span class="math inline">\(d\)</span> é a quantidade de observações em cada variável sendo o número de linhas do banco de dados. Com base na matriz de correlação fornecida podemos obter o vetor de autovalores e seus respectivos autovetores.</p>
+<p>O vetor de autovalores pode ser representado da seguinte forma:</p>
+<p>[ =</p>
+<span class="math display">\[\begin{bmatrix}
+    \lambda_{1;1} \\
+    \lambda_{2;1}\\
+    \vdots \\
+    \lambda_{p;1}
+\end{bmatrix}\]</span>
+<p>]</p>
+<p>Cada autovalor possui um autovetor que é associado a quantidade de variáveis observadas originalmente (número de colunas). Dessa forma, temos <span class="math inline">\(p\)</span> (quantidade de componentes) autovetores cada um com <span class="math inline">\(n\)</span> (quantidade de variáveis) observações, ou seja, <span class="math inline">\(n\)</span> linhas. Os autovetores podem ser representados matricialmente da seguinte forma:</p>
+<p>[ _1=</p>
+<span class="math display">\[\begin{bmatrix}
+    a_{1;1} \\
+    a_{2;1}\\
+    \vdots \\
+    a_{n;1}
+\end{bmatrix}\]</span>
+<p>] [ _2=</p>
+<span class="math display">\[\begin{bmatrix}
+    a_{1;1} \\
+    a_{2;1}\\
+    \vdots \\
+    a_{n;1}
+\end{bmatrix}\]</span>
+<p>] [ _{p}=</p>
+<span class="math display">\[\begin{bmatrix}
+    a_{1;1} \\
+    a_{2;1}\\
+    \vdots \\
+    a_{n;1}
+\end{bmatrix}\]</span>
+<p>.]</p>
+<p>Conforme definido anteriormente, o cálculo da n-ésima componente principal para uma observação da amostra j, denominada por <span class="math inline">\(c_{n}^{j}\)</span> é definida por:</p>
+<p><span class="math display">\[c_{n}^{j}=\sum_{l=1}^{17}a_{nl}x_{l}^{j}.\]</span></p>
+<p>Para facilitar o entendimento, a matriz com todas as componentes principais pode ser representada da seguinte forma:</p>
+<p>[ =</p>
+<span class="math display">\[\begin{bmatrix}
+    C_{1}^{1} &amp; C_{2}^{1} &amp;  \dots  &amp; C_{p}^{1} \\
+    C_{1}^{2} &amp; C_{2}^{2} &amp;  \dots  &amp; C_{p}^{2} \\
+    \vdots &amp; \vdots &amp;  \ddots &amp; \vdots \\
+    C_{1}^{d} &amp; C_{2}^{d} &amp; \dots  &amp; C_{p}^{d}\\
+\end{bmatrix}\]</span>
+<p>.] O índice de capital social para cada observação <span class="math inline">\(j\)</span>, denominado por <span class="math inline">\(ICS_j\)</span>, é dado por:</p>
+<p><span class="math display">\[ICS_j=\frac{1}{\sum_{k=1}^{p}\lambda_k}\sum_{k=1}^{p}\lambda_k c_{k}^{j},\]</span> em que <span class="math inline">\(\lambda_k\)</span> representa o autovalor associado à k-ésima componente principal, sendo <span class="math inline">\(p\)</span> o número de componentes principais utilizadas na construção do índice (quantidade definida a partir da variabilidade miníma explicada aceitável).</p>
+<p>O vetor com todos os índices são dados na forma:</p>
+<p>[ =</p>
+<span class="math display">\[\begin{bmatrix}
+    ICS_{1;1} \\
+    ICS_{2;1}\\
+    \vdots \\
+    ICS_{j;1}\\
+    \vdots\\
+    ICS_{d;1}
+\end{bmatrix}\]</span>
+<p>,]</p>
+<p>sendo <span class="math inline">\(d\)</span> o número de observações.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./06-regressao.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Regressão</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./08-amostragem.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Amostragem</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Estatística Resumida BOOK (1e) por Thalis Rebouças.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Esse livro foi feito em <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

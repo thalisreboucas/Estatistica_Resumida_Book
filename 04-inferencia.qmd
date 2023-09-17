@@ -1,0 +1,259 @@
+# Inferência
+
+## Teste de Hipóteses
+
+### Definição 
+
+  Um teste de hipóteses estatístico é um procedimento que utilizamos para testar duas hipóteses disjuntas a respeito de um parâmetro de interesse. Utiliza-se a nomenclatura $H_0$ e $H_1$ para representar as  hipóteses, as quais são chamadas de "hipótese nula" e "hipótese alternativa", respectivamente.
+    
+   Quando testamos uma hipótese, podemos encontrar dois tipos de erros:
+ - **Erro Tipo I:** Consiste em rejeitarmos a hipótese nula, dado que ela é vera dadeira. Geralmente, representa-se por $\alpha$ a probabilidade de cometer esse tipo de erro.
+ - **Erro Tipo II:** Consiste em não rejeitarmos $H_0$, dado que ela é falsa. Normalmente representa-se com a letra grega $\beta$ a probabilidade de cometer esse erro.
+    
+  Ambos os erros devem ser evitados, porém, por questões matemáticas, geralmente só podemos controlar facilmente o Erro Tipo I, por isso, devemos estabelecer as hipóteses de forma que o Erro Tipo I seja o erro mais prejudicial ao processo estudado.
+    
+  **Nível de significância:** O valor de $\alpha$, referente ao Erro Tipo I, é chamado de nível de significância, esse valor deve ser pré-estabelecido pelo pesquisador. 
+  
+   **Estatística de teste:** É a estatística amostral na qual basearemos seus valores para decidirmos pela rejeição ou não de $H_0$. Essa estatística é associada ao estimador do parâmetro que se deseja testar. Por exemplo, ao queremos testar algo sobre o real valor da média populacional $\mu$ (parâmetro),quando conhece-se o valor do desvio padrão populacional ($\sigma$) utiliza-se a a estatística de teste abaixo:
+   
+\[
+        Z = \dfrac{\bar{X}-\mu}{\sigma/\sqrt n}
+ \]
+    Onde: $\bar{X}$ é a média amostral, sendo ela o **estimador** natural da média populacional; 
+    n é o tamanho da nossa amostra.
+    
+  **Região de Rejeição:** É a região formada pelo conjunto de valores que levam $H_0$ a ser rejeitada. O valor que delimita essa região é denominado valor crítico. Caso o valor calculado da estatística de teste caia nessa região, rejeita-se a hipótese nula.
+  
+  **Nível descritivo ou valor-p:** É o menor valor para o qual rejeita-se a hipótese nula. Quando esse valor cai na região crítica, rejeita-se $H_0$. Para sabermos se rejeitaremos ou não $H_0$ baseado no valor-p, deve-se compará-lo com o nível de significância do teste e rejeitar $H_0$, se aquele for menor do que este, rejeita-se $H_0$.
+    
+## Testes de Independência
+  Como em todo teste de hipóteses, devemos estabelecer primeiro as hipóteses a serem testadas. Num teste de independência essas hipóteses são:  
+    
+- **H_0:**  As variáveis de classificação são independentes.
+- **H_1:**  As variáveis de classificação não são independentes.
+   
+  Existem vários testes de independência em que cada um desses são adequados para uma determinada situação
+
+
+## Teste T para amostras independentes
+O teste T é utilizado para verificar a existência de diferença entre as médias de dois grupos da mesma população. Para isso a variável independente deve ser necessariamente métrica e a variável dependente deve ser categórica. 
+
+Suponha que o objetivo seja analisar as médias amostrais $\bar{x}_1$ e $\bar{x}_2$
+
+Assim, testa-se a hipótese como segue:
+
+$$\begin{cases} H_0: \bar{x}_1 = \bar{x}_2 \\ H_1: \bar{x}_1 \neq \ \bar{x}_2 \end{cases}$$
+
+Suponha que o objetivo seja analisar as médias amostrais $\bar{x}_1$ e $\bar{x}_2$
+
+$$t = \frac{\bar{x}_1-\bar{x}_2}{\sqrt{s^2(\frac{1}{n_1}+\frac{1}{n_2})}}$$
+
+Onde o numerador é a diferença das médias amostrais e o denominados é o desvio padrão amostral
+
+## Teste Exato de Fisher
+
+O Teste Exato de Fisher é utilizado para verificar se existe associação entre as variáveis linha e as variáveis coluna em uma tabela de contingência construída a partir dos dados da amostra. Embora na prática o Teste Exato de Fisher seja aplicado quando os tamanhos das amostras são pequenos, o teste é válido para todos os tamanhos amostrais.
+
+As hipóteses do teste são:
+
+\[
+\begin{cases}
+ H_0:  \text{As variáveis linha e coluna são independentes}; \\
+ H_1:  \text{As variáveis linha e coluna não são independentes.}  
+\end{cases}
+\]
+
+A estatística de teste, apresentada por Fisher (1934), propõe que a distribuição de probabilidade das frequências de quaisquer tabelas de contingência sejam substituídas pela probabilidade da distribuição das mesmas frequências. Considerando a Tabela \ref{eq:exemplo}, arranjada de modo que $n_{1.}\leq n_{.1}\leq n_{.2}\leq n_{2.}$, temos uma distribuição de probabilidade hipergeométrica para a única frequência de valor independente, $o_{11}$, a partir de,
+
+$$P[X=o_{11}]=\cfrac{\displaystyle{n_{1.} \choose o_{11}} \displaystyle{n_{2.} \choose o_{21}}}{\displaystyle{n \choose n_{.1}}}=\cfrac{n_{1.}!n_{2.}!n_{.1}!n_{.2}!}{o_{11}!o_{12}!o_{21}!o_{22}!n!}$$
+
+O Teste Exato de Fisher consiste na determinação desta probabilidade e dos arranjos possíveis que, com os mesmos totais marginais, tenham ainda mais desvios em relação à hipótese nula $H_0$.
+
+## Teste de Bonferroni
+
+O teste de bonferroni consiste na realização de um teste t para cada par de médias a uma taxa de erro por comparação (TPC) de $a/(k/2)$. Usando esse teste, o nível de significância da família é no máximo $a$, para qualquer média das populações. Assim o teste de Bonferroni protege a taxa de erro da família dos testes. Pode ser usado para quaisquer que sejam os dados balanceados ou não. Não é um teste exato, e assim é baseado na aproximação como primeira desigualdade de Bonferroni. Em diversos momentos ele pode ser um teste conservativo, isto é, a taxa de erro da família testes é muito menor que o nível de significância $a$. 
+Para tamanhos de amostras iguais o teste de Bonferroni considera duas médias significativamente diferentes se o valor absoluto das diferenças ultrapassar:
+\[
+    LSD=t_{(a,N-k)}\sqrt{2\frac{QME}{n}}
+\]
+E para os dados não balanceados temos: 
+
+\[
+    LSD=t_{(a,N-k)}\sqrt{QME(\frac{1}{n_i}+\frac{1}{n_j})}
+\]
+
+Em que $a^\prime=\frac{1}{2}(a/c)$ e **c** é o número de comparações duas a duas. O quantil $t_{(a,N-k)}$ é da distribuição t-Student com parâmetros $N-k$. Assim a margem de erro da equação anterior depende do número de comparações.
+
+## Teste de Proporção
+
+Temos que testar hipóteses e construir intervalos de confiança para a proporção de uma população. Supondo que uma amostra aleatória de tamanho n tenha sido retirada de uma grande população e que X são as observações, nessa amostra pertencem a uma classe de interesse. Então $P=X/n$ é um estimador da proporção $p$ da população, que pertence a essa classe, $n$ e $p$ são parâmetros da Distribuição Binomial.,em que $n$ é o tamanho amostral e $p$ a proporção.
+**Para o teste bilateral:**
+
+$$
+  \begin{cases}
+  H_0: p=p_0\\
+  H_1: p \neq p_0
+  \end{cases}
+$$
+A estatística de teste é:
+$$Z_0=\frac{X-np_0}{\sqrt{nX/n(1-X/n)}}$$
+Rejeitamos a hipótese nula se
+
+$$ Z_0<- Z_{1-\alpha/2} \,\text{ ou }\, Z_0 > Z_{1-\alpha/2} $$
+
+**Para o teste unilateral a direita:**
+$$
+  \begin{cases}
+  H_0: p=p_0\\
+  H_1: p > p_0
+  \end{cases}
+$$
+A estatística de teste é:
+$$Z_0=\frac{X-np_0}{\sqrt{nX/n(1-X/n)}}$$
+Rejeitamos a hipótese nula se
+$$ Z_0 > Z_{1-\alpha} $$
+
+## Teste de Post Hoc
+
+Análise Post Hoc é feita após a conclusão do estudo, usando o tamanho do estudo e de efeito obtidos para determinar a potência da amostra estudada, podemos dizer que são conjuntos de teste para determinar as diferenças presentes. Os testes são para comparações pareadas, projetadas afim de comparar todas as diferentes combinações dos grupos de tratamento. Observando as taxas erro, temos:
+
+- **Erro tipo 1:** É a probabilidade de rejeitar a hipótese nula (Ho), quando ela é verdadeira.
+- **Erro tipo 2:** É a probabilidade de não rejeitar a hipótese nula (Ho), quando ela é falsa.
+
+Probabilidade de acontecer pelo menos um erro do Tipo I em um conjunto de relações estatísticas, assumindo erroneamente que pelo menos uma das diferenças analisadas é significativamente diferente da hipótese nula.
+
+\[ { \alpha_{F_W}}= 1-(1- {\alpha})^c
+\]
+Onde C é o número de comparações, então dessa forma temos que:
+
+$$ c=\frac{k*(k-1)}{2}
+$$
+
+
+
+## Teste de McNemar
+
+O teste de McNemar é utilizado em tabelas de contingência, essencialmente em tabelas $(2\times2)$, com dados pareados para comparar frequências marginais, que em outras palavras significa que o teste compara se houve mudança nas proporções no objeto de estudo antes e depois de uma intervenção. 
+
+As hipóteses do teste são:
+
+$$ \begin{cases}
+H_0: \text{As variáveis linha e coluna possuem as mesmas proporções;}\\
+H_1: \text{As variáveis linha e coluna possuem proporções diferentes.}
+\end{cases}
+$$ 
+
+A estatística do teste, $Q$, é dada por:
+$$ Q=\cfrac{(a-d)^2}{(a+d)}$$
+em que $Q \sim \chi^2(1)$, lê-se $Q$ segue uma distribuição qui-quadrado com 1 grau de liberdade.
+
+## Teste de Wilcoxon pareado 
+O teste de Wilcoxon pareado é utilizado para comparar se dois grupos possuem a mesma medida de tendência central. Esse teste leva em consideração a magnitude das
+diferenças entre os pares.
+
+Seja $d_i$ o escore-diferença para qualquer par combinado, representando a diferença dos pares sobre dois tratamentos $X$ e $Y$, isto é, $d_i=X_i-Y_i$. Ordena-se todos os $d_i$'s sem considerar o sinal, posteriormente dar-se o posto 1 ao menor $|d_i|$, posto 2 ao segundo menor, e assim sucessivamente.
+
+As possíveis hipóteses do teste são:
+
+- $H_0$: $d=0$ vs $H_1$: $d \neq 0$;
+- $H_0$: $d=0$ vs $H_1$: $d>0$;
+- $H_0$: $d=0$ vs $H_1$: $d<0$. 
+
+
+A hipótese nula ($H_0$) é que os tratamentos $X$ e $Y$ são equivalentes, isto é, eles são amostras de populações com a mesma mediana e a mesma distribuição contínua. 
+
+Duas estatísticas são definidas:
+$$
+    T^+=\sum_{i}d_i,
+$$
+$$
+    T^-=\sum_{i}d_i,
+$$
+soma dos $d_i$'s positivos e soma dos $d_i$'s negativos, respectivamente.
+
+
+Rejeitamos a hipótese nula se a probabilidade de $T^+$ tabulado para um determinado tamanho $N$ é menor ou igual ao nível de significância escolhido.
+
+
+## Teste Qui-Quadrado
+
+### Teste Qui-Quadrado de Pearson para independência
+
+O teste de independência Qui-Quadrado é usado para descobrir se existe uma associação entre a variável de linha e a variável de coluna em uma tabela de contingência construído à partir de dados da amostra. A hipótese nula é de que as variáveis não estão associadas, em outras palavras, eles são independentes. A hipótese alternativa é de que as variáveis estão associadas, ou dependentes.
+
+Para que o teste possa ser aplicado, é necessário levar em consideração algumas suposições e condições, que serão listadas a seguir:
+
+ 1. Os dados devem ser derivados de contagens(frequências) para as categorias das variáveis categóricas;
+ 
+ 2. As frequência das células da tabela de dupla entrada devem ser independentes umas das outras;
+
+ 3. Os sujeitos contados na tabela devem ser de uma amostra aleatória extraída de uma única população;
+ 
+ 4. Devemos ter dados suficientes;
+  
+ 5. A tabela de contingência(dupla entrada) deve conter pelo menos 5 observações em cada célula;
+    
+ 6. A tabela de valores esperados não pode conter observações menores que 5
+
+ 7. O teste é aplicável tanto para a variável qualitativa quanto quantitativa.
+   
+As hipóteses do teste são:
+
+\[
+\begin{cases}
+ H_0: \text{As variáveis X e Y são independentes};\\
+ H_1: \text{As variáveis X e Y não são independentes.}
+\end{cases}
+\]
+
+
+A Estatística do teste é dada por:
+
+$$\chi^2 = \sum_i\sum_j\frac{(o_{ij} - e_{ij}^2)}{e_{ij}}$$
+
+onde:
+ - $o_{ij}$ é o valor observado na célula;
+ - $e_{ij}$ é o valor esperado
+ - $e_{ij} = \frac{\text{total da linha i} * \text{total da coluna j}}{\text{total geral}}$
+
+
+Rejeitamos $H_0$ se $\chi^2_{calculado} > \chi^2_{tabelado}$
+
+### Teste Qui-Quadrado
+O teste $\chi^2$ ( Qui- Quadrado) é um dos testes usados para avaliar se há independência entre variáveis qualitativas, para isso, devemos dispor nossos dados em uma tabela de contingência, no caso em que queremos testar a hipótese de independência entre exatamente duas variáveis, utiliza-se uma tabela de dupla entrada.
+
+Para realizar o teste, iremos testar a hipótese como segue:
+\[\begin{cases} 
+  H_0: \text{As variáveis são independentes;} \\
+  H_1: \text{As variáveis não são independentes.}
+  \end{cases}
+\]
+Para isso, utilizaremos a estatística de teste abaixo:
+
+\[
+ \mathbf{\chi^2_v}  =  \dfrac{\sum_{\substack{i=1}}^{k} \sum_{\substack{i=1}}^{l}(O_{ij}-E_{ij})^2}{E_{ij}}
+\]
+
+onde:
+
+**k** é o número de linhas da tabela ;
+
+**l** é o número de colunas;
+
+$E_{ij} = n p_{ij}$  é a frequência esperada da célula **ij**;
+
+$p_{ij}$ é a probabilidade de ocorrer uma observação na célula **ij**. Se as variáveis são
+independentes, espera-se que $p_{ij} = p_{i.}p_{j.}$, onde $p_i{i.}$ é a probabilidade marginal correspondente a linha **i** e $p_{.j}$ é a probabilidade marginal correspondente a coluna **j**;
+
+$v = (k-1)(l-1)$ é o grau de liberdade.
+
+Assim como nos demais testes de hipóteses, rejeitaremos $H_0$ caso a probabilidade encontrada seja menor do que o nível de significância estipulado.
+
+Porém, esse teste apresenta problemas quando temos um número de observações  considerado pequeno - geralmente considera-se "pequeno" um tamanho amostral menor do que 40 unidades - ou quando temos em uma das caselas de cruzamento um número esperado menor do que 5. Nesses casos, utiliza-se uma correção para uma melhor estimação.
+
+A correção indicada para esse caso é a de Yates ou de Continuidade, pela qual o valor do teste Qui-Quadrado será recalculado como se segue:
+
+\[
+\mathbf{\chi^2_v}  =  \dfrac{\sum_{\substack{i=1}}^{k} \sum_{\substack{i=1}}^{l}(|O_{ij}-E_{ij}|-0,5)^2}{E_{ij}}.
+\]
+
