@@ -16,11 +16,7 @@
 
 Para a confecção desse trabalho foi utilizada amostragem aleatória simples sem reposição, uma vez que o espaço amostral era composto por idosos que são acompanhados pelo posto de saúde, ou seja, o mesmo idoso é acompanhado por apenas um posto de saúde. \indent Levou-se em consideração que cada idoso poderia ou não ser selecionado, perante isso, utiliza-se na Estatística a distribuição de Bernoulli. Sendo $x_i$ o idoso observado, então:
 
-$x_i =
-\begin{cases}
-1,\text{ se o idoso é selecionado para compor a amostra.} \\
-0,\text{ se o idoso não é selecionado para compor amostra.} 
-$
+\$x_i = \\begin{cases} 1,\text{ se o idoso é selecionado para compor a amostra.} \\ 0,\text{ se o idoso não é selecionado para compor amostra.} \$
 
 De acordo com a distribuição assumida, pode-se calcular a variância dos dados por:
 

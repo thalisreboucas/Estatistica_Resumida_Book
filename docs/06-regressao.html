@@ -184,6 +184,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#manova" id="toc-manova" class="nav-link" data-scroll-target="#manova"><span class="header-section-number">3.5.2</span> MANOVA</a></li>
   </ul></li>
   <li><a href="#regressão-linear-múltipla" id="toc-regressão-linear-múltipla" class="nav-link" data-scroll-target="#regressão-linear-múltipla"><span class="header-section-number">3.6</span> Regressão Linear Múltipla</a></li>
+  <li><a href="#modelos-lineares-generalizados" id="toc-modelos-lineares-generalizados" class="nav-link" data-scroll-target="#modelos-lineares-generalizados"><span class="header-section-number">3.7</span> Modelos Lineares Generalizados</a></li>
+  <li><a href="#análise-de-resíduos" id="toc-análise-de-resíduos" class="nav-link" data-scroll-target="#análise-de-resíduos"><span class="header-section-number">3.8</span> Análise de Resíduos</a>
+  <ul class="collapse">
+  <li><a href="#distância-de-cook" id="toc-distância-de-cook" class="nav-link" data-scroll-target="#distância-de-cook"><span class="header-section-number">3.8.1</span> Distância de Cook</a></li>
+  <li><a href="#grafíco-envolope-e-normalidade-dos-resíduos" id="toc-grafíco-envolope-e-normalidade-dos-resíduos" class="nav-link" data-scroll-target="#grafíco-envolope-e-normalidade-dos-resíduos"><span class="header-section-number">3.8.2</span> Grafíco Envolope e Normalidade dos Resíduos</a></li>
+  <li><a href="#outras-diagnósticos-dos-resíduos" id="toc-outras-diagnósticos-dos-resíduos" class="nav-link" data-scroll-target="#outras-diagnósticos-dos-resíduos"><span class="header-section-number">3.8.3</span> Outras diagnósticos dos Resíduos</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -221,22 +228,22 @@ ul.task-list li input[type="checkbox"] {
 <section id="coeficiente-de-determinação" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="coeficiente-de-determinação"><span class="header-section-number">3.2</span> Coeficiente de Determinação</h2>
 <p>Uma das formas de avaliar a qualidade do ajuste do modelo é através do coeficiente de determinação, representado por <span class="math inline">\(R^2\)</span>. Este varia entre <span class="math inline">\(0\leq R^2 \leq 1\)</span> e indica quanto o modelo foi capaz de explicar os dados coletados. Vale ressaltar que é pouco comum que tenhamos uma correlação perfeita (<span class="math inline">\(R^2=1\)</span>) na prática, porque existem muitos fatores que determinam as relações entre variáveis na vida real. O coeficiente de determinação é dado pela seguinte expressão</p>
-<p>$ <span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 R^2=\dfrac{\bigg(\sum_{i=1}^n (x_i-\bar{x})Y_i\bigg)^2}{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n (Y_i - \bar{Y})^2}
-\end{eqnarray*}\]</span> $</p>
+\end{eqnarray*}\]</span></p>
 </section>
 <section id="transformação-de-yeo-johnson" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="transformação-de-yeo-johnson"><span class="header-section-number">3.3</span> Transformação de Yeo-Johnson</h2>
 <p>Existem situações que a variável em estudo não possui comportamento normal e para o uso da regressão linear múltipla é necessário que a suposição de normalidade seja cumprida. Uma alternativa em experimentos como esse é o uso de alguma transformação na variável resposta.</p>
 <p>A transformação de Box-Cox (1964) é amplamente utilizada, contudo essa transformação é válida apenas em variáveis positivas. Uma alternativa de transformação para variáveis que assumem valores positivos e negativos é a transformação de Yeo-Johnson (2000), essa é uma extensão da transformação de Box-Cox. Sua fórmula é definida a seguir</p>
-<p>$ <span class="math display">\[\begin{eqnarray*}
+<p><span class="math display">\[\begin{eqnarray*}
 \phi^{(\lambda)}=\left\{\begin{array}{rc}
 \dfrac{(y+1)^\lambda-1}{\lambda},&amp;\mbox{para }\lambda \neq0, y \geq 0\\
 \text{log}(y+1), &amp;\mbox{para } \lambda =0 , y\geq 0 \\
 -\dfrac{(1-y)^{2-\lambda}-1}{2-\lambda},  &amp;\mbox{para } \lambda \neq2 , y &lt; 0 \\
 -\text{log}(1-y), &amp;\mbox{para } \lambda =2 , y &lt; 0
 \end{array}\right.
-\end{eqnarray*}\]</span> $</p>
+\end{eqnarray*}\]</span></p>
 <p>em que <span class="math inline">\(\lambda\)</span> é um parâmetro desconhecido e <span class="math inline">\(\phi^{(\lambda)}\)</span> é a observação transformada.</p>
 </section>
 <section id="análise-de-regressão-linear-e-correlação" class="level2" data-number="3.4">
@@ -269,16 +276,17 @@ H_1: \text{Pelo menos um} \; \beta_{j} \; \text{é diferente de zero.}
   H_1: \text{pelo menos duas são diferentes.}
 \end{cases}
 \]</span></p>
-<p>em que $ _{i} $ , <span class="math inline">\(i = 1,2,\ldots,k\)</span> são as médias dos tratamentos. A estatística <span class="math inline">\(\Lambda^{*}\)</span> foi originalmente proposta por Wilks e corresponde a uma forma equivalente do teste F da hipótese de ausência de efeito de tratamento do caso uni-variado. Que é dada por:</p>
+<p>em que <span class="math inline">\(\mu\_{i}\)</span> , <span class="math inline">\(i = 1,2,\ldots,k\)</span> são as médias dos tratamentos. A estatística <span class="math inline">\(\Lambda^{*}\)</span> foi originalmente proposta por Wilks e corresponde a uma forma equivalente do teste F da hipótese de ausência de efeito de tratamento do caso uni-variado. Que é dada por:</p>
 <p><span class="math display">\[ \Lambda^{*} = \dfrac{|E|}{|H|+|E|}\]</span></p>
 <p>Onde, o determinante da soma do quadrado dos erros e dos produtos cruzados, a matriz W é dividida pelo determinante da soma total de quadrados e matriz de produtos cruzados T = H + E. Se H é grande em relação a E, então | H + E | será grande em relação a | E |. Assim, vamos rejeitar a hipótese nula quanto menor for a estatística de Wilks (perto de zero).</p>
 </section>
 </section>
 <section id="regressão-linear-múltipla" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="regressão-linear-múltipla"><span class="header-section-number">3.6</span> Regressão Linear Múltipla</h2>
-<p>Podemos definir um modelo de regressão linear múltipla da seguinte maneira: $ <span class="math display">\[\begin{eqnarray*}
+<p>Podemos definir um modelo de regressão linear múltipla da seguinte maneira:</p>
+<p><span class="math display">\[\begin{eqnarray*}
 Y= \beta_0 + \boldsymbol{\beta}_j\boldsymbol{X}_j+\boldsymbol{\varepsilon}_i,\ i=1,...,n,
-\end{eqnarray*}\]</span> $</p>
+\end{eqnarray*}\]</span></p>
 <p>em que <span class="math inline">\(j=1,...,p\)</span> e <span class="math inline">\(p\)</span> é o número de parâmetros do modelo.</p>
 <ul>
 <li><span class="math inline">\(Y\)</span> é um vetor <span class="math inline">\(n\times 1\)</span> correspondente a variável resposta do estudo;</li>
@@ -291,8 +299,23 @@ Y= \beta_0 + \boldsymbol{\beta}_j\boldsymbol{X}_j+\boldsymbol{\varepsilon}_i,\ i
 <li>Os erros (ou resíduos) devem seguir uma distribuição Normal e serem independentes;</li>
 <li>Os erros devem possuir médias iguais a zero e serem homocedásticos (variâncias constantes para cada indivíduo).</li>
 </ul>
+</section>
+<section id="modelos-lineares-generalizados" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="modelos-lineares-generalizados"><span class="header-section-number">3.7</span> Modelos Lineares Generalizados</h2>
+</section>
+<section id="análise-de-resíduos" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="análise-de-resíduos"><span class="header-section-number">3.8</span> Análise de Resíduos</h2>
+<section id="distância-de-cook" class="level3" data-number="3.8.1">
+<h3 data-number="3.8.1" class="anchored" data-anchor-id="distância-de-cook"><span class="header-section-number">3.8.1</span> Distância de Cook</h3>
+</section>
+<section id="grafíco-envolope-e-normalidade-dos-resíduos" class="level3" data-number="3.8.2">
+<h3 data-number="3.8.2" class="anchored" data-anchor-id="grafíco-envolope-e-normalidade-dos-resíduos"><span class="header-section-number">3.8.2</span> Grafíco Envolope e Normalidade dos Resíduos</h3>
+</section>
+<section id="outras-diagnósticos-dos-resíduos" class="level3" data-number="3.8.3">
+<h3 data-number="3.8.3" class="anchored" data-anchor-id="outras-diagnósticos-dos-resíduos"><span class="header-section-number">3.8.3</span> Outras diagnósticos dos Resíduos</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

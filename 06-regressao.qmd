@@ -18,9 +18,9 @@ Os modelos de regressão múltipla são construídos pelos seguintes passos:
 
 Uma das formas de avaliar a qualidade do ajuste do modelo é através do coeficiente de determinação, representado por $R^2$. Este varia entre $0\leq R^2 \leq 1$ e indica quanto o modelo foi capaz de explicar os dados coletados. Vale ressaltar que é pouco comum que tenhamos uma correlação perfeita ($R^2=1$) na prática, porque existem muitos fatores que determinam as relações entre variáveis na vida real. O coeficiente de determinação é dado pela seguinte expressão
 
-$ \begin{eqnarray*}
+\begin{eqnarray*}
 R^2=\dfrac{\bigg(\sum_{i=1}^n (x_i-\bar{x})Y_i\bigg)^2}{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n (Y_i - \bar{Y})^2}
-\end{eqnarray*} $
+\end{eqnarray*}
 
 ## Transformação de Yeo-Johnson
 
@@ -28,14 +28,14 @@ Existem situações que a variável em estudo não possui comportamento normal e
 
 A transformação de Box-Cox (1964) é amplamente utilizada, contudo essa transformação é válida apenas em variáveis positivas. Uma alternativa de transformação para variáveis que assumem valores positivos e negativos é a transformação de Yeo-Johnson (2000), essa é uma extensão da transformação de Box-Cox. Sua fórmula é definida a seguir
 
-$ \begin{eqnarray*}
+\begin{eqnarray*}
 \phi^{(\lambda)}=\left\{\begin{array}{rc}
 \dfrac{(y+1)^\lambda-1}{\lambda},&\mbox{para }\lambda \neq0, y \geq 0\\
 \text{log}(y+1), &\mbox{para } \lambda =0 , y\geq 0 \\
 -\dfrac{(1-y)^{2-\lambda}-1}{2-\lambda},  &\mbox{para } \lambda \neq2 , y < 0 \\
 -\text{log}(1-y), &\mbox{para } \lambda =2 , y < 0 
 \end{array}\right.
-\end{eqnarray*} $
+\end{eqnarray*}
 
 em que $\lambda$ é um parâmetro desconhecido e $\phi^{(\lambda)}$ é a observação transformada.
 
@@ -79,7 +79,7 @@ $$\begin{cases}
 \end{cases}
  $$
 
-em que \$ \mu\_{i} \$ , $i = 1,2,\ldots,k$ são as médias dos tratamentos. A estatística $\Lambda^{*}$ foi originalmente proposta por Wilks e corresponde a uma forma equivalente do teste F da hipótese de ausência de efeito de tratamento do caso uni-variado. Que é dada por:
+em que $\mu\_{i}$ , $i = 1,2,\ldots,k$ são as médias dos tratamentos. A estatística $\Lambda^{*}$ foi originalmente proposta por Wilks e corresponde a uma forma equivalente do teste F da hipótese de ausência de efeito de tratamento do caso uni-variado. Que é dada por:
 
 $$ \Lambda^{*} = \dfrac{|E|}{|H|+|E|}$$
 
@@ -87,9 +87,11 @@ Onde, o determinante da soma do quadrado dos erros e dos produtos cruzados, a ma
 
 ## Regressão Linear Múltipla
 
-Podemos definir um modelo de regressão linear múltipla da seguinte maneira: $ \begin{eqnarray*}
+Podemos definir um modelo de regressão linear múltipla da seguinte maneira:
+
+\begin{eqnarray*}
 Y= \beta_0 + \boldsymbol{\beta}_j\boldsymbol{X}_j+\boldsymbol{\varepsilon}_i,\ i=1,...,n,
-\end{eqnarray*} $
+\end{eqnarray*}
 
 em que $j=1,...,p$ e $p$ é o número de parâmetros do modelo.
 
@@ -102,3 +104,11 @@ em que $j=1,...,p$ e $p$ é o número de parâmetros do modelo.
 
 -   Os erros (ou resíduos) devem seguir uma distribuição Normal e serem independentes;
 -   Os erros devem possuir médias iguais a zero e serem homocedásticos (variâncias constantes para cada indivíduo).
+
+## Modelos Lineares Generalizados
+
+## Análise de Resíduos 
+### Distância de Cook
+### Grafíco Envolope e Normalidade dos Resíduos
+### Outras diagnósticos dos Resíduos
+
