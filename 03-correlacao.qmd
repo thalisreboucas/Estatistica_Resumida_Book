@@ -8,20 +8,19 @@ Este coeficiente obtém-se diretamente a partir da estatística $\chi_v^2$ atrav
 
 $$
 C = \sqrt{\dfrac{\chi_v^2}{n(l-1)}}
-$$ onde n representa o número total de observações e l representa o mínimo entre o número de linhas e colunas na tabela de contingência.
+$$
 
-A partir do valor do coeficiente de Cramér é possível efetuar um teste às hipóteses 
+onde n representa o número total de observações e l representa o mínimo entre o número de linhas e colunas na tabela de contingência.
 
-$\begin{cases}
-H_0:\text{  As variáveis são independentes;} \\
-H_1:\text{  As variáveis não são independentes.}
-\end{cases}$
+A partir do valor do coeficiente de Cramér é possível efetuar um teste às hipóteses
+
+$\begin{cases} H_0:\text{  As variáveis são independentes;} \\ H_1:\text{  As variáveis não são independentes.} \end{cases}$
 
 ## Coeficiente de Correlação Ponto Biserial
 
 Esse coeficiente ($r_{pb}$) mede a correlação entre uma variável quantitativa e uma variável categórica binária (0,1). Ele pode variar entre -1 e 1 e é definido pela seguinte fórmula:
 
-$ r\_{pb} = \dfrac{M_1-M_0}{S_n}\sqrt{pq} $
+$r\_{pb} = \dfrac{M_1-M_0}{S_n}\sqrt{pq}$
 
 -   $M_1$ = média do grupo que recebeu o valor 1 da variável binária.
 -   $M_0$ = média do grupo que recebeu o valor 0 da variável binária.
@@ -43,7 +42,7 @@ $$\rho_{(x,y)} = \frac{cov{(x,y)}}{S_{x}S_{y}},$$ em que ,
 
 -   $S_{Y}$ - Desvio Padrão da variável Y.
 
-    Como dito anteriormente, o $\rho$ pode assumir valores entre -1 e +1 e neste ponto cabe algumas observações, tais como
+Como dito anteriormente, o $\rho$ pode assumir valores entre -1 e +1 e neste ponto cabe algumas observações, tais como
 
 -   $\rho_{(x,y)}$ = +1 significa uma correlação positiva perfeita entre as duas variáveis, ou seja, se uma aumenta a outra também aumenta;
 

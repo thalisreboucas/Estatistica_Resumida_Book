@@ -24,10 +24,12 @@ Para estimar a diferença $\Delta$ entre as medianas das populações, considera
 
 O estimador $\hat{\Delta}$ associado a estatística de Wilcoxon-Mann-Whitney é definido por $\hat{\Delta}= \ \hbox{mediana}\{(y_i-x_j), \ i=1,\ldots, n; j=1,\ldots,m\}$, chamado de pseudo-mediana.
 
-A estatística de teste, denotada por $W$, é dada pelo mínimo de $U_m$ e $U_n$ $ \begin{align*}
+A estatística de teste, denotada por $W$, é dada pelo mínimo de $U_m$ e $U_n$ 
+
+\begin{align*}
     U_m &= S_m - \frac{m(m+1)}{2} \\
     U_n &= S_n - \frac{n(n+1)}{2}
-\end{align*} $
+\end{align*}
 
 em que:
 
@@ -42,19 +44,19 @@ Seja $P_1$ e $P_2$ duas população das quais não temos informações sobre sua
 
 Sendo $X_1,X_2,...,X_m$ e $Y_1,Y_2,...,Y_n$, amostras aleatórias independentes e identicamente distribuídas(i.i.d) das populações $P_1$ e $P_2$, respectivamente. Além disso, essas amostras também serão independentes entre si, sendo essas tomadas de forma que $n\leq m$.
 
-Sendo F e G as funções de distribuição correspondentes as populações $P_1$ e $P_2$, respectivamente, a hipótese nula é tal como segue: $ H_0: F(t) = G(t),\text{para todo t} $
+Sendo F e G as funções de distribuição correspondentes as populações $P_1$ e $P_2$, respectivamente, a hipótese nula é tal como segue: $H_0: F(t) = G(t),\text{para todo t}$
 
 Entretanto, podemos também considerar que Y tem a mesma distribuição de X+$\Delta$. Perante isso, a hipótese nula será:
 
-$ H_0: \Delta  = 0 $
+$H_0: \Delta = 0$
 
 Daí, como estamos interessados apenas em haver diferença entre as medianas, independentemente se essa diferença é negativa ou positiva, utilizamos como hipótese alternativa, uma hipótese bilateral, como vemos abaixo:
 
-$ H_1: \Delta \neq 0 $
+$H_1: \Delta \neq 0$
 
 Com os dados já ordenados em ordem crescente, calculamos $S_m$ e $S_n$, que serão as somas dos postos de X e Y , respectivamente. Após isso, obteremos:
 
-$ U_m = S_m - \dfrac{1}{2}m(m+1) ;$ \text{e} $; U_n = S_n - \dfrac{1}{2}n(n+1)$
+$U_m = S_m - \dfrac{1}{2}m(m+1);$ e ;$ U_n = S_n - \dfrac{1}{2}n(n+1)$
 
 Após isso, calcula-se a estatistica de teste W, que será o menor valor entre $U_m$ e $U_n$.
 
@@ -62,8 +64,8 @@ Sob $H_0$, espera-se que tenhamos uma distribuição de postos aproximadamente i
 
 Daí,deve-se encontrar os valores críticos $t_1$ e $t_2$, de forma que
 
-$ P(W<t_1$ = P$W>t_2$ $\approx \dfrac{\alpha}{2} $
+$P(W<t_1$ = $P(W>t_2) \approx \dfrac{\alpha}{2}$
 
 Rejeita-se $H_0$ caso $W_{obs}<t_1$ ou $W_{obs}>t_2$
 
-Seu valor-p será dado por: $ 2P(W\>W\_{obs}-1,$\text{ se $W_{obs}>\dfrac{mn}{2}$ ou  $2P(W<W_{obs})$, se $W_{obs}\leq \dfrac{mn}{2} $ 
+Seu valor-p será dado por: $ 2P(W>W\_{obs}-1,$ se $W_{obs}>\dfrac{mn}{2}$ ou $2P(W<W_{obs})$, se $W\_{obs}\leq \dfrac{mn}{2}$

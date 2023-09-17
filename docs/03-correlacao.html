@@ -208,14 +208,15 @@ ul.task-list li input[type="checkbox"] {
 <p>Este coeficiente obtém-se diretamente a partir da estatística <span class="math inline">\(\chi_v^2\)</span> através da expressão</p>
 <p><span class="math display">\[
 C = \sqrt{\dfrac{\chi_v^2}{n(l-1)}}
-\]</span> onde n representa o número total de observações e l representa o mínimo entre o número de linhas e colunas na tabela de contingência.</p>
+\]</span></p>
+<p>onde n representa o número total de observações e l representa o mínimo entre o número de linhas e colunas na tabela de contingência.</p>
 <p>A partir do valor do coeficiente de Cramér é possível efetuar um teste às hipóteses</p>
 <p><span class="math inline">\(\begin{cases} H_0:\text{  As variáveis são independentes;} \\ H_1:\text{  As variáveis não são independentes.} \end{cases}\)</span></p>
 </section>
 <section id="coeficiente-de-correlação-ponto-biserial" class="level2">
 <h2 class="anchored" data-anchor-id="coeficiente-de-correlação-ponto-biserial">Coeficiente de Correlação Ponto Biserial</h2>
 <p>Esse coeficiente (<span class="math inline">\(r_{pb}\)</span>) mede a correlação entre uma variável quantitativa e uma variável categórica binária (0,1). Ele pode variar entre -1 e 1 e é definido pela seguinte fórmula:</p>
-<p>$ r_{pb} = $</p>
+<p><span class="math inline">\(r\_{pb} = \dfrac{M_1-M_0}{S_n}\sqrt{pq}\)</span></p>
 <ul>
 <li><span class="math inline">\(M_1\)</span> = média do grupo que recebeu o valor 1 da variável binária.</li>
 <li><span class="math inline">\(M_0\)</span> = média do grupo que recebeu o valor 0 da variável binária.</li>
@@ -232,8 +233,10 @@ C = \sqrt{\dfrac{\chi_v^2}{n(l-1)}}
 <ul>
 <li><p><span class="math inline">\(\text{Cov}{(x,y)}\)</span> - Covariância ou variância conjunta das variáveis X e Y;</p></li>
 <li><p><span class="math inline">\(S_{x}\)</span>- Desvio Padrão da variável X</p></li>
-<li><p><span class="math inline">\(S_{Y}\)</span> - Desvio Padrão da variável Y.</p>
-<p>Como dito anteriormente, o <span class="math inline">\(\rho\)</span> pode assumir valores entre -1 e +1 e neste ponto cabe algumas observações, tais como</p></li>
+<li><p><span class="math inline">\(S_{Y}\)</span> - Desvio Padrão da variável Y.</p></li>
+</ul>
+<p>Como dito anteriormente, o <span class="math inline">\(\rho\)</span> pode assumir valores entre -1 e +1 e neste ponto cabe algumas observações, tais como</p>
+<ul>
 <li><p><span class="math inline">\(\rho_{(x,y)}\)</span> = +1 significa uma correlação positiva perfeita entre as duas variáveis, ou seja, se uma aumenta a outra também aumenta;</p></li>
 <li><p><span class="math inline">\(\rho_{(x,y)}\)</span> = -1 significa uma correlação negativa perfeita entre as duas variáveis, isto é, se uma aumenta a outra diminui;</p></li>
 <li><p><span class="math inline">\(\rho_{(x,y)}\)</span> = 0 significa que as duas variáveis não dependem linearmente uma da outra. No entanto, pode existir uma outra dependência “não-linear”. Logo, o resultado deve ser investigado por outros meios.</p></li>

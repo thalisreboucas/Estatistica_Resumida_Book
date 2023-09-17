@@ -14,7 +14,7 @@ Ambos os erros devem ser evitados, porém, por questões matemáticas, geralment
 
 **Estatística de teste:** É a estatística amostral na qual basearemos seus valores para decidirmos pela rejeição ou não de $H_0$. Essa estatística é associada ao estimador do parâmetro que se deseja testar. Por exemplo, ao queremos testar algo sobre o real valor da média populacional $\mu$ (parâmetro),quando conhece-se o valor do desvio padrão populacional ($\sigma$) utiliza-se a a estatística de teste abaixo:
 
-$ Z = \dfrac{\bar{X}-\mu}{\sigma/\sqrt n} $ Onde: $\bar{X}$ é a média amostral, sendo ela o **estimador** natural da média populacional; n é o tamanho da nossa amostra.
+$Z = \dfrac{\bar{X}-\mu}{\sigma/\sqrt n}$ Onde: $\bar{X}$ é a média amostral, sendo ela o **estimador** natural da média populacional; n é o tamanho da nossa amostra.
 
 **Região de Rejeição:** É a região formada pelo conjunto de valores que levam $H_0$ a ser rejeitada. O valor que delimita essa região é denominado valor crítico. Caso o valor calculado da estatística de teste caia nessa região, rejeita-se a hipótese nula.
 
@@ -28,7 +28,7 @@ Como em todo teste de hipóteses, devemos estabelecer primeiro as hipóteses a s
 
 -   **H_1:** As variáveis de classificação não são independentes.
 
-    Existem vários testes de independência em que cada um desses são adequados para uma determinada situação
+Existem vários testes de independência em que cada um desses são adequados para uma determinada situação
 
 ## Teste T para amostras independentes
 
@@ -52,13 +52,12 @@ O Teste Exato de Fisher é utilizado para verificar se existe associação entre
 
 As hipóteses do teste são:
 
-$
+```{=tex}
 \begin{cases}
- H_0:  \text{As variáveis linha e coluna são independentes}; \\
- H_1:  \text{As variáveis linha e coluna não são independentes.}  
+H_0: \text{As variáveis linha e coluna são independentes}; \\
+H_1: \text{As variáveis linha e coluna não são independentes.}
 \end{cases}
-$
-
+```
 A estatística de teste, apresentada por Fisher (1934), propõe que a distribuição de probabilidade das frequências de quaisquer tabelas de contingência sejam substituídas pela probabilidade da distribuição das mesmas frequências. Considerando a Tabela \ref{eq:exemplo}, arranjada de modo que $n_{1.}\leq n_{.1}\leq n_{.2}\leq n_{2.}$, temos uma distribuição de probabilidade hipergeométrica para a única frequência de valor independente, $o_{11}$, a partir de,
 
 $$P[X=o_{11}]=\cfrac{\displaystyle{n_{1.} \choose o_{11}} \displaystyle{n_{2.} \choose o_{21}}}{\displaystyle{n \choose n_{.1}}}=\cfrac{n_{1.}!n_{2.}!n_{.1}!n_{.2}!}{o_{11}!o_{12}!o_{21}!o_{22}!n!}$$
@@ -77,22 +76,25 @@ Em que $a^\prime=\frac{1}{2}(a/c)$ e **c** é o número de comparações duas a 
 
 Temos que testar hipóteses e construir intervalos de confiança para a proporção de uma população. Supondo que uma amostra aleatória de tamanho n tenha sido retirada de uma grande população e que X são as observações, nessa amostra pertencem a uma classe de interesse. Então $P=X/n$ é um estimador da proporção $p$ da população, que pertence a essa classe, $n$ e $p$ são parâmetros da Distribuição Binomial.,em que $n$ é o tamanho amostral e $p$ a proporção. **Para o teste bilateral:**
 
-$$
+
   \begin{cases}
   H_0: p=p_0\\
   H_1: p \neq p_0
   \end{cases}
-$$ 
-A estatística de teste é: $$Z_0=\frac{X-np_0}{\sqrt{nX/n(1-X/n)}}$$ Rejeitamos a hipótese nula se
+
+ A estatística de teste é: $$Z_0=\frac{X-np_0}{\sqrt{nX/n(1-X/n)}}$$ Rejeitamos a hipótese nula se
 
 $$ Z_0<- Z_{1-\alpha/2} \,\text{ ou }\, Z_0 > Z_{1-\alpha/2} $$
 
-**Para o teste unilateral a direita:** $$
-  \begin{cases}
+**Para o teste unilateral a direita:** 
+
+ \begin{cases}
   H_0: p=p_0\\
   H_1: p > p_0
   \end{cases}
-$$ A estatística de teste é: $$Z_0=\frac{X-np_0}{\sqrt{nX/n(1-X/n)}}$$ Rejeitamos a hipótese nula se $$ Z_0 > Z_{1-\alpha} $$
+
+
+A estatística de teste é: $$Z_0=\frac{X-np_0}{\sqrt{nX/n(1-X/n)}}$$ Rejeitamos a hipótese nula se $$ Z_0 > Z_{1-\alpha} $$
 
 ## Teste de Post Hoc
 
@@ -103,7 +105,7 @@ Análise Post Hoc é feita após a conclusão do estudo, usando o tamanho do est
 
 Probabilidade de acontecer pelo menos um erro do Tipo I em um conjunto de relações estatísticas, assumindo erroneamente que pelo menos uma das diferenças analisadas é significativamente diferente da hipótese nula.
 
-$ { \alpha\_{F_W}}= 1-(1- {\alpha})\^c $ Onde C é o número de comparações, então dessa forma temos que:
+$\alpha_{F_W}= 1-(1- \alpha)^c$ Onde C é o número de comparações, então dessa forma temos que:
 
 $$ c=\frac{k*(k-1)}{2}
 $$
@@ -114,11 +116,11 @@ O teste de McNemar é utilizado em tabelas de contingência, essencialmente em t
 
 As hipóteses do teste são:
 
-$$ \begin{cases}
+\begin{cases}
 H_0: \text{As variáveis linha e coluna possuem as mesmas proporções;}\\
 H_1: \text{As variáveis linha e coluna possuem proporções diferentes.}
 \end{cases}
-$$
+
 
 A estatística do teste, $Q$, é dada por: $$ Q=\cfrac{(a-d)^2}{(a+d)}$$ em que $Q \sim \chi^2(1)$, lê-se $Q$ segue uma distribuição qui-quadrado com 1 grau de liberdade.
 
@@ -140,7 +142,9 @@ Duas estatísticas são definidas: $$
     T^+=\sum_{i}d_i,
 $$ $$
     T^-=\sum_{i}d_i,
-$$ soma dos $d_i$'s positivos e soma dos $d_i$'s negativos, respectivamente.
+$$
+
+soma dos $d_i$'s positivos e soma dos $d_i$'s negativos, respectivamente.
 
 Rejeitamos a hipótese nula se a probabilidade de $T^+$ tabulado para um determinado tamanho $N$ é menor ou igual ao nível de significância escolhido.
 
@@ -168,12 +172,7 @@ Para que o teste possa ser aplicado, é necessário levar em consideração algu
 
 As hipóteses do teste são:
 
-$
-begin{cases}
-H_0: \text{As variáveis X e Y são independentes};\\
-H_1: \text{As variáveis X e Y não são independentes.}
-end{cases}
-$
+\begin{cases} H_0: \text{As variáveis X e Y são independentes};\\ H_1: \text{As variáveis X e Y não são independentes.} \end{cases}
 
 A Estatística do teste é dada por:
 
@@ -187,17 +186,13 @@ Rejeitamos $H_0$ se $\chi^2_{calculado} > \chi^2_{tabelado}$
 
 O teste $\chi^2$ ( Qui- Quadrado) é um dos testes usados para avaliar se há independência entre variáveis qualitativas, para isso, devemos dispor nossos dados em uma tabela de contingência, no caso em que queremos testar a hipótese de independência entre exatamente duas variáveis, utiliza-se uma tabela de dupla entrada.
 
-Para realizar o teste, iremos testar a hipótese como segue: 
-$
-\begin{cases} 
-  H_0: \text{As variáveis são independentes;} \\
-  H_1: \text{As variáveis não são independentes.}
-  \end{cases}
-$
+Para realizar o teste, iremos testar a hipótese como segue: \$
+
+\begin{cases} H_0: \text{As variáveis são independentes;} \\ H_1: \text{As variáveis não são independentes.} \end{cases}
 
 Para isso, utilizaremos a estatística de teste abaixo:
 
-$ \mathbf{\chi^2_v} = \dfrac{\sum_{\substack{i=1}}^{k} \sum_{\substack{i=1}}^{l}(O_{ij}-E_{ij})^2}{E_{ij}} $
+$\mathbf{\chi^2_v} = \dfrac{\sum_{\substack{i=1}}^{k} \sum_{\substack{i=1}}^{l}(O_{ij}-E_{ij})^2}{E_{ij}}$
 
 onde:
 
@@ -217,4 +212,4 @@ Porém, esse teste apresenta problemas quando temos um número de observações 
 
 A correção indicada para esse caso é a de Yates ou de Continuidade, pela qual o valor do teste Qui-Quadrado será recalculado como se segue:
 
-$ \mathbf{\chi^2_v} = \dfrac{\sum_{\substack{i=1}}^{k} \sum_{\substack{i=1}}^{l}(|O_{ij}-E_{ij}|-0,5)^2}{E_{ij}}. $
+$\mathbf{\chi^2_v} = \dfrac{\sum_{\substack{i=1}}^{k} \sum_{\substack{i=1}}^{l}(|O_{ij}-E_{ij}|-0,5)^2}{E_{ij}}.$

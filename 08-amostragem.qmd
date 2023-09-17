@@ -1,5 +1,17 @@
 # Amostragem
 
+## Amostragem por conglomerado - AC
+
+## Amostragem Estratificada - AE
+
+## Amostragem Poisson - AP
+
+## Amostragem Binomial - AB
+
+## Amostragem Aleatória Sistemática - AS
+
+## Amostragem Aleatória Simples com reposição - AASc
+
 ## Amostragem Aleatória Simples sem reposição - AASs
 
 Para a confecção desse trabalho foi utilizada amostragem aleatória simples sem reposição, uma vez que o espaço amostral era composto por idosos que são acompanhados pelo posto de saúde, ou seja, o mesmo idoso é acompanhado por apenas um posto de saúde. \indent Levou-se em consideração que cada idoso poderia ou não ser selecionado, perante isso, utiliza-se na Estatística a distribuição de Bernoulli. Sendo $x_i$ o idoso observado, então:
@@ -18,7 +30,7 @@ em que:
 
 $\sigma^2 =$ Variabilidade dos indivíduos na nossa população;
 
-$p \ \ =$ Proporção de membros da população em estudo que apresenta a característica.
+$p =$ Proporção de membros da população em estudo que apresenta a característica.
 
 Como não teve-se acesso a nenhum dado anterior que pudesse estimar a variabilidade dos dados estudados, tais como pesquisas anteriores, optou-se por usar a maior variabilidade possível, denotada na estatística como "variabilidade conservadora", no qual $p$ assume o valor que maior estima a variância, no caso, 0,5. Daí, segue-se que,
 
@@ -58,6 +70,6 @@ em que:
 
 $n_{new} =$ Novo tamanho amostral com fator de correção;
 
-$\ n \ \ =$ Tamanho amostral sem o fator de correção;
+$n =$ Tamanho amostral sem o fator de correção;
 
-$\ N \ =$ Tamanho da população alvo.
+$N =$ Tamanho da população alvo.
